@@ -1,7 +1,10 @@
 .page-articles {
 
     .articles-selection {
-        
+        padding: 1rem;
+        background: #f6f6f6;
+
+
         &__list {
             list-style: none;
 
@@ -10,6 +13,19 @@
             }
         }
 
+    }
+
+    .articles-list {
+        padding: 1rem;
+        background: #ddd;
+
+        &__list {
+            list-style: none;
+
+            li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
     }
 
 }

@@ -1,34 +1,25 @@
-import React, {ReactNode} from 'react'
+import React from 'react'
 import {Grid} from 'semantic-ui-react'
-import ArticleFloating from '../components/article_floating'
+import PageSliceArticlesSelection from './articles/articles_selection'
+import PageSliceArticlesList from './articles/articles_list'
+import {Article, SelectedArticle, SetSelectedArticles} from '../types'
+
 
 type Props = {
-  articles: any[]
+  articles: Article[]
+  selectedArticles: SelectedArticle[]
+  setSelectedArticles: SetSelectedArticles
 }
 
-const PageArticles = ({articles}: Props) => {
+const PageArticles = ({articles, selectedArticles, setSelectedArticles}: Props) => {
   return (
     <div className="page-articles">
       <Grid>
-        <Grid.Column width={10} className="articles-selection">
-          <main>
-            {articles.length > 0 && (
-              <ul className="articles-selection__list">
-                {
-                  articles.map(article =>
-                    <li key={article.id}>
-                      <ArticleFloating title={article.title} description={article.description} />
-                    </li>
-                  )
-                }
-              </ul>
-            )}
-          </main>
+        <Grid.Column width={10}>
+          <PageSliceArticlesSelection articles={articles} setSelectedArticles={setSelectedArticles} />
         </Grid.Column>
-        <Grid.Column width={6} className="articles-list">
-          <aside>
-            lista artykułów
-          </aside>
+        <Grid.Column width={6}>
+          <PageSliceArticlesList selectedArticles={selectedArticles}/>
         </Grid.Column>
       </Grid>
     </div>

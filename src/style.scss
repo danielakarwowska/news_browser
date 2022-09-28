@@ -5,3 +5,6 @@ body {
     text-align: center;
     padding: 2rem;
 }
+
+@import 'components/article_floating.scss';
+@import 'pages/articles.scss';

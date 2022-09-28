@@ -1,0 +1,15 @@
+.page-articles {
+
+    .articles-selection {
+        
+        &__list {
+            list-style: none;
+
+            li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+
+}

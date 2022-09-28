@@ -1,13 +1,18 @@
 import React from 'react'
+import {Button} from 'semantic-ui-react'
 import ArticlePreview from '../../components/article_preview'
-import {SelectedArticle} from '../../types'
+import {SelectedArticle, SetSelectedArticles} from '../../types'
 
 type Props = {
     selectedArticles: SelectedArticle[]
+    setReadyToRead: any
+    setSelectedArticles: SetSelectedArticles
 }
 
-const PageSliceArticlesList = ({selectedArticles}: Props) => {
+const PageSliceArticlesList = ({selectedArticles, setReadyToRead, setSelectedArticles}: Props) => {
+
     const howManyArticles = selectedArticles.length
+
     return (
         <aside className="articles-list">
             <h3>Selected articles</h3>
@@ -16,15 +21,20 @@ const PageSliceArticlesList = ({selectedArticles}: Props) => {
                 howManyArticles > 0 && (
                     <ul className="articles-list__list">
                         {
-                            selectedArticles.map(article => (
-                                <li key={`preview_${article.id}`}>
-                                    <ArticlePreview title={article.title} id={article.id} />
+                            selectedArticles.map(selectedArticle => (
+                                <li key={`preview_${selectedArticle.id}`}>
+                                    <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
                                 </li>
                             ))
                         }
                     </ul>
                 )
             }
+            <Button
+                content="Go to reading"
+                disabled={selectedArticles.length === 0}
+                onClick={() => setReadyToRead(true)}
+            />
         </aside>
     )
 }

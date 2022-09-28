@@ -1,31 +1,34 @@
 import React, {useCallback} from 'react'
 import {Button} from 'semantic-ui-react'
-import {SetSelectedArticles} from '../types'
+import {Article, SelectedArticle, SetSelectedArticles} from '../types'
 
 type Props = {
-    id: string
-    title: string
-    description: string
+    article: Article
+    selectedArticles: SelectedArticle[]
     setSelectedArticles: SetSelectedArticles
 }
 
 const ArticleFloating = (props: Props) => {
 
+    const {title, description, id} = props.article
+ 
+    const isDisabled = !!props.selectedArticles.find(art => art.id === id)
+
     const onClick = useCallback(() => {
         props.setSelectedArticles(prev => [
             ...prev,
             {
-                id: props.id,
-                title: props.title
+                id: id,
+                title: title
             }
         ])
-    }, [props.setSelectedArticles, props.id, props.title])
+    }, [props.setSelectedArticles, id, title])
 
     return (
         <div className="article --floating">
-            <h3>{props.title}</h3>
-            <p>{props.description}</p>
-            <Button content="Dodaj do listy" onClick={() => onClick()}/>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <Button disabled={isDisabled} content="Dodaj do listy" onClick={() => onClick()}/>
         </div>
     )
 }

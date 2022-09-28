@@ -1,13 +1,18 @@
 import React, {useEffect, useState} from 'react'
 import Layout from './components/layout'
 import PageArticles from './pages/articles'
+import PagePreview from './pages/preview'
+
 import {Article, SelectedArticle} from './types'
 
 
 const App = (): JSX.Element => {
+
     const [articles, setArticles] = useState<Article[]>([])
 
     const [selectedArticles, setSelectedArticles] = useState<SelectedArticle[]>([])
+
+    const [readyToRead, setReadyToRead] = useState(false)
 
     useEffect(() => {
         // onMount
@@ -27,7 +32,18 @@ const App = (): JSX.Element => {
 
     return (
         <Layout>
-            <PageArticles articles={articles} selectedArticles={selectedArticles} setSelectedArticles={setSelectedArticles} />
+            {
+                !readyToRead
+                    ?   (
+                            <PageArticles
+                                articles={articles}
+                                setReadyToRead={setReadyToRead}
+                                selectedArticles={selectedArticles}
+                                setSelectedArticles={setSelectedArticles}
+                            />
+                        )
+                    : <PagePreview />
+            }
         </Layout>
     )
 }

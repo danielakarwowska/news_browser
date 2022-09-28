@@ -1,13 +1,14 @@
 import React from 'react'
 import ArticleFloating from '../../components/article_floating'
-import {SetSelectedArticles} from '../../types'
+import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
 
 type Props = {
-    articles: any[]
+    articles: Article[]
+    selectedArticles: SelectedArticle[]
     setSelectedArticles: SetSelectedArticles
 }
 
-const PageSliceArticlesSelection = ({articles, setSelectedArticles}: Props) => {
+const PageSliceArticlesSelection = ({articles, selectedArticles, setSelectedArticles}: Props) => {
     return (
         <main className="articles-selection">
             {articles.length > 0 && (
@@ -15,7 +16,11 @@ const PageSliceArticlesSelection = ({articles, setSelectedArticles}: Props) => {
                     {
                         articles.map(article =>
                             <li key={article.id}>
-                                <ArticleFloating id={article.id} title={article.title} description={article.description} setSelectedArticles={setSelectedArticles} />
+                                <ArticleFloating
+                                    article={article}
+                                    selectedArticles={selectedArticles}
+                                    setSelectedArticles={setSelectedArticles}
+                                />
                             </li>
                         )
                     }

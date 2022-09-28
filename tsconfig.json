@@ -1,0 +1,17 @@
+{
+  "include": [
+      "src/*"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "target": "es5",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  }
+}

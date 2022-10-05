@@ -13,3 +13,5 @@ export type SelectedArticle = {
 }
 
 export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[]>>
+
+export type SetSelectedArticle = Dispatch<React.SetStateAction<string>>

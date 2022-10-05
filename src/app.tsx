@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import Layout from './components/layout'
 import PageArticles from './pages/articles'
-import PagePreview from './pages/preview'
+import PageRead from './pages/read'
 
 import {Article, SelectedArticle} from './types'
 
@@ -12,6 +12,10 @@ const App = (): JSX.Element => {
     const [selectedArticles, setSelectedArticles] = useState<SelectedArticle[]>([])
 
     const [readyToRead, setReadyToRead] = useState(false)
+
+    const onBackButtonClick = useCallback(() => {
+        setReadyToRead(false)
+    }, [setReadyToRead])
 
     useEffect(() => {
         // onMount
@@ -62,7 +66,13 @@ const App = (): JSX.Element => {
                                 setSelectedArticles={setSelectedArticles}
                             />
                         )
-                    : <PagePreview />
+                    :   (
+                            <PageRead
+                                articles={articles}
+                                selectedArticles={selectedArticles}
+                                onBackButtonClick={onBackButtonClick}
+                            />
+                        )
             }
         </Layout>
     )

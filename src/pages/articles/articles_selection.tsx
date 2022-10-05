@@ -5,10 +5,12 @@ import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
 type Props = {
     articles: Article[]
     selectedArticles: SelectedArticle[]
+    maxArticlesToSelect: number
     setSelectedArticles: SetSelectedArticles
 }
 
-const PageSliceArticlesSelection = ({articles, selectedArticles, setSelectedArticles}: Props) => {
+
+const PageSliceArticlesSelection = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
     return (
         <main className="articles-selection">
             {articles.length > 0 && (
@@ -19,6 +21,7 @@ const PageSliceArticlesSelection = ({articles, selectedArticles, setSelectedArti
                                 <ArticleFloating
                                     article={article}
                                     selectedArticles={selectedArticles}
+                                    maxArticlesToSelect={maxArticlesToSelect}
                                     setSelectedArticles={setSelectedArticles}
                                 />
                             </li>

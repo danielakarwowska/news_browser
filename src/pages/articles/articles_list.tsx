@@ -5,18 +5,19 @@ import {SelectedArticle, SetSelectedArticles} from '../../types'
 
 type Props = {
     selectedArticles: SelectedArticle[]
+    maxArticlesToSelect: number
     setReadyToRead: any
     setSelectedArticles: SetSelectedArticles
 }
 
-const PageSliceArticlesList = ({selectedArticles, setReadyToRead, setSelectedArticles}: Props) => {
+const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setReadyToRead, setSelectedArticles}: Props) => {
 
     const howManyArticles = selectedArticles.length
 
     return (
         <aside className="articles-list">
             <h3>Selected articles</h3>
-            <p>You chose <strong>{howManyArticles}</strong> articles to read.</p>
+            <p>You chose <strong>{howManyArticles}</strong> articles to read. Maxium selection is <strong>{maxArticlesToSelect}</strong></p>
             {
                 howManyArticles > 0 && (
                     <ul className="articles-list__list">

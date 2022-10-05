@@ -5,6 +5,7 @@ import {Article, SelectedArticle, SetSelectedArticles} from '../types'
 type Props = {
     article: Article
     selectedArticles: SelectedArticle[]
+    maxArticlesToSelect: number
     setSelectedArticles: SetSelectedArticles
 }
 
@@ -12,7 +13,7 @@ const ArticleFloating = (props: Props) => {
 
     const {title, description, id} = props.article
  
-    const isDisabled = !!props.selectedArticles.find(art => art.id === id)
+    const isDisabled = !!props.selectedArticles.find(art => art.id === id) || (props.selectedArticles.length === props.maxArticlesToSelect)
 
     const onClick = useCallback(() => {
         props.setSelectedArticles(prev => [

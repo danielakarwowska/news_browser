@@ -12,6 +12,8 @@ type Props = {
   setSelectedArticles: SetSelectedArticles
 }
 
+const maxArticlesToSelect = 3
+
 const PageArticles = ({articles, selectedArticles, setReadyToRead, setSelectedArticles}: Props) => {
   return (
     <div className="page-articles">
@@ -19,6 +21,7 @@ const PageArticles = ({articles, selectedArticles, setReadyToRead, setSelectedAr
         <Grid.Column width={10}>
           <PageSliceArticlesSelection
             articles={articles}
+            maxArticlesToSelect={maxArticlesToSelect}
             selectedArticles={selectedArticles}
             setSelectedArticles={setSelectedArticles}
           />
@@ -27,6 +30,7 @@ const PageArticles = ({articles, selectedArticles, setReadyToRead, setSelectedAr
           <PageSliceArticlesList
             selectedArticles={selectedArticles}
             setReadyToRead={setReadyToRead}
+            maxArticlesToSelect={maxArticlesToSelect}
             setSelectedArticles={setSelectedArticles}
           />
         </Grid.Column>

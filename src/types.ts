@@ -4,12 +4,14 @@ import React, {Dispatch} from "react";
 export type Article = {
     id: string
     title: string
-    description: string
+    description : string
+    urlToImage: any
 }
 
 export type SelectedArticle = {
     id: string
     title: string
+    description: string
 }
 
 export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[]>>

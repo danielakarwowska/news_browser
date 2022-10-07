@@ -18,7 +18,8 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
                             <h4>{selectedArticle.id}</h4>
                         </>
                     )
-                    : (
+                    :(
+                        
                         <>
                             <h3>No article selected</h3>
                             <span>Select an article to read from the list</span>

@@ -11,7 +11,7 @@ type Props = {
 
 const ArticleFloating = (props: Props) => {
 
-    const {title, description, publishedAt, urlToImage} = props.article
+    const {title, content, publishedAt, urlToImage} = props.article
  
     const isDisabled = !!props.selectedArticles.find(art => art.id === publishedAt) || (props.selectedArticles.length === props.maxArticlesToSelect)
 
@@ -22,14 +22,15 @@ const ArticleFloating = (props: Props) => {
             {
                 id: publishedAt,
                 title: title,
-                description: description
+                description: content,
+                urlToImage: urlToImage
             }
         ])
     }, [props.setSelectedArticles, publishedAt, title])
     return (
         <div className="article --floating">
             <h3>{title}</h3>
-            <p>{description}</p>
+            <p>{content}</p>
             <Button disabled={isDisabled} content="Dodaj do listy" onClick={() => onClick()}/>
 
 

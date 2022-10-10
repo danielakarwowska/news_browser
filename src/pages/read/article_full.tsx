@@ -1,12 +1,12 @@
 import React from 'react'
-import {Article} from '../../types'
+import { Article } from '../../types'
 
 type Props = {
     selectedArticle: Article
 }
 
 
-const PageSliceArticleFull = ({selectedArticle}: Props) => {
+const PageSliceArticleFull = ({ selectedArticle }: Props) => {
     return (
         <main className="article-full">
             {
@@ -14,13 +14,16 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
                     ? (
                         <>
                             <h1>{selectedArticle.title}</h1>
-                            <h3>{selectedArticle.description}</h3>
+
+                            <img className='image-url' src={selectedArticle.urlToImage} alt={selectedArticle.urlToImage} />
+
+                            <h3>{selectedArticle.content}</h3>
                             <h4>{selectedArticle.id}</h4>
                         </>
-                    
+
                     )
-                    :(
-                        
+                    : (
+
                         <>
                             <h3>No article selected</h3>
                             <span>Select an article to read from the list</span>

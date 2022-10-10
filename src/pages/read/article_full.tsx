@@ -17,6 +17,7 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
                             <h3>{selectedArticle.description}</h3>
                             <h4>{selectedArticle.id}</h4>
                         </>
+                    
                     )
                     :(
                         

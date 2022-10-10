@@ -37,6 +37,7 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setReadyT
                 onClick={() => setReadyToRead(true)}
             />
         </aside>
+        
     )
 }
 

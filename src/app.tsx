@@ -3,10 +3,10 @@ import axios from 'axios'
 import Layout from './components/layout'
 import PageArticles from './pages/articles'
 import PageRead from './pages/read'
-
 import {Article, SelectedArticle} from './types'
 
-const App = (): JSX.Element => {
+
+const App = ()  => {
 
     const [articles, setArticles] = useState<Article[]>([])
 
@@ -19,7 +19,7 @@ const App = (): JSX.Element => {
     }, [setReadyToRead])
     
     useEffect(() => {
-        axios.get("https://newsapi.org/v2/everything?q=apple&from=2022-10-06&to=2022-10-06&sortBy=popularity&apiKey=992cc5dfe65d43f582c92f6610baab68")
+        axios.get("https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=992cc5dfe65d43f582c92f6610baab68")
         .then((response) => {
             setArticles(response.data.articles)
             console.log(response.data.articles)

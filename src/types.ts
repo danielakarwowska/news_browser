@@ -6,6 +6,7 @@ export type Article = {
     title: string
     description : string
     urlToImage: any
+    publishedAt: string
 }
 
 export type SelectedArticle = {

@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react'
+
 import {Button} from 'semantic-ui-react'
 import {Article, SelectedArticle, SetSelectedArticles} from '../types'
 
@@ -11,24 +12,27 @@ type Props = {
 
 const ArticleFloating = (props: Props) => {
 
-    const {title, description, id} = props.article
- 
-    const isDisabled = !!props.selectedArticles.find(art => art.id === id) || (props.selectedArticles.length === props.maxArticlesToSelect)
+    const {title,description, content, publishedAt, urlToImage} = props.article
+
+    const isDisabled = !!props.selectedArticles.find(art => art.id === publishedAt)
+
 
     const onClick = useCallback(() => {
         props.setSelectedArticles(prev => [
             ...prev,
             {
-                id: id,
-                title: title
+                id: publishedAt,
+                title: title,
+                content:content,
+                description:description,
+                urlToImage: urlToImage
             }
         ])
-    }, [props.setSelectedArticles, id, title])
-
+    }, [props.setSelectedArticles, publishedAt, title])
     return (
         <div className="article --floating">
             <h3>{title}</h3>
-            <p>{description}</p>
+            <h4>{description}</h4>
             <Button disabled={isDisabled} content="Dodaj do listy" onClick={() => onClick()}/>
         </div>
     )

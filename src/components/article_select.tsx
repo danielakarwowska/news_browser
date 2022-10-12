@@ -17,8 +17,9 @@ const ArticleSelect = ({article, selectedArticle, setSelectedArticle}: Props) =>
                 content="Czytaj"
                 disabled={selectedArticle === article.id}
                 onClick={() => setSelectedArticle(article.id)}/>
+                
         </div>
     )
+  
 }
-
 export default ArticleSelect

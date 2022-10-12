@@ -23,6 +23,7 @@ const ArticlePreview = (props: Props) => {
         })
     }, [])
 
+
     return (
         <div className="article --preview">
             <strong>{props.article.title}</strong>

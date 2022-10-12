@@ -18,7 +18,7 @@ const PageRead = ({articles, onBackButtonClick, selectedArticles}) => {
         <div className="page-preview">
         <Grid>
           <Grid.Column width={10}>
-            <PageSliceArticleFull selectedArticle={articles.find(a => a.id === selectedArticle)}/>
+            <PageSliceArticleFull selectedArticle={articles.find(a => a.publishedAt === selectedArticle)}/>
           </Grid.Column>
           <Grid.Column width={6}>
             <PageSliceArticlesToRead selectedArticle={selectedArticle} selectedArticles={selectedArticles} setSelectedArticle={setSelectedArticle} />

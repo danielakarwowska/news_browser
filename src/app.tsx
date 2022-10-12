@@ -1,11 +1,12 @@
 import React, {useCallback, useEffect, useState} from 'react'
+import axios from 'axios'
 import Layout from './components/layout'
 import PageArticles from './pages/articles'
 import PageRead from './pages/read'
-
 import {Article, SelectedArticle} from './types'
 
-const App = (): JSX.Element => {
+
+const App = ()  => {
 
     const [articles, setArticles] = useState<Article[]>([])
 
@@ -16,42 +17,13 @@ const App = (): JSX.Element => {
     const onBackButtonClick = useCallback(() => {
         setReadyToRead(false)
     }, [setReadyToRead])
-
+ 
     useEffect(() => {
-        // onMount
-        // Tu bedzie API get
-        setArticles([
-            {
-                id: '1234',
-                title: 'To jest tytul 1',
-                description: 'To jest jakis opis'
-            },
-            {
-                id: '2345',
-                title: 'To jest tytul 2',
-                description: 'To jest jakis opis inny niz pierwszy'
-            },
-            {
-                id: '3334',
-                title: 'To jest tytul 3',
-                description: 'To jest jakis opis'
-            },
-            {
-                id: '4445',
-                title: 'To jest tytul 4',
-                description: 'To jest jakis opis inny niz pierwszy'
-            },
-            {
-                id: '5534',
-                title: 'To jest tytul 5',
-                description: 'To jest jakis opis'
-            },
-            {
-                id: '6645',
-                title: 'To jest tytul 6',
-                description: 'To jest jakis opis inny niz pierwszy'
-            }
-        ])
+        axios.get("https://newsapi.org/v2/everything?q=Apple&from=2022-10-12&sortBy=popularity&language=en&apiKey=992cc5dfe65d43f582c92f6610baab68")
+        .then((response) => {
+            setArticles(response.data.articles)
+            console.log(response.data.articles)
+        })
     }, [])
 
     return (

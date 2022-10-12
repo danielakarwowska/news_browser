@@ -1,7 +1,5 @@
-$bodyColor:green;
 
 body {
-    background-color: $bodyColor;
     text-align: center;
     padding: 2rem;
 }
@@ -11,3 +9,4 @@ body {
 @import 'components/article_select.scss';
 @import 'pages/articles.scss';
 @import 'pages/read.scss';
+@import 'pages/read/articles_full.scss'

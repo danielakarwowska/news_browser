@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Grid} from 'semantic-ui-react'
+import { Grid} from 'semantic-ui-react'
 import PageSliceArticlesSelection from './articles/articles_selection'
 import PageSliceArticlesList from './articles/articles_list'
 import {Article, SelectedArticle, SetSelectedArticles} from '../types'

@@ -4,9 +4,10 @@ import React, {Dispatch} from "react";
 export type Article = {
     id: string
     title: string
-    content : string
+    description : string
     urlToImage: any
     publishedAt: string
+    content: string
 }
 
 export type SelectedArticle = {

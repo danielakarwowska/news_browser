@@ -1,4 +1,6 @@
 import React from 'react'
+import Description from '../../components/articles.description'
+import { Button } from 'semantic-ui-react'
 import { Article } from '../../types'
 
 type Props = {
@@ -14,10 +16,8 @@ const PageSliceArticleFull = ({ selectedArticle }: Props) => {
                     ? (
                         <>
                             <h1>{selectedArticle.title}</h1>
-
-                            <img className='image-url' src={selectedArticle.urlToImage} alt={selectedArticle.urlToImage} />
-
-                            <h3>{selectedArticle.content}</h3>
+                            <img className='image-url' src={selectedArticle.urlToImage} alt={selectedArticle.urlToImage}/>              
+                            <h3><Description/></h3>
                             <h4>{selectedArticle.id}</h4>
                         </>
 

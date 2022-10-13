@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useReducer, useState} from 'react'
 import axios from 'axios'
 import Layout from './components/layout'
 import PageArticles from './pages/articles'
@@ -7,6 +7,17 @@ import {Article, SelectedArticle} from './types'
 
 
 const App = ()  => {
+
+    const inicialState = {
+        articles: [],
+        selectedArticles: [],
+    }
+    const reducer = (state, action) => {
+        const {type, payload} = action
+        return {...state, [type]: payload}
+    }
+    debugger
+    const [state, dispach] = useReducer(reducer, inicialState)
 
     const [articles, setArticles] = useState<Article[]>([])
 

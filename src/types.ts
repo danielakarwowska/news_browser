@@ -7,7 +7,6 @@ export type Article = {
     description : string
     urlToImage: any
     publishedAt: string
-    content: string
 }
 
 export type SelectedArticle = {
@@ -15,7 +14,6 @@ export type SelectedArticle = {
     title: string
     description: string
     urlToImage: any
-
 }
 
 export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[]>>

@@ -34,6 +34,7 @@ const PageArticles = ({articles, selectedArticles, setSelectedArticles}: Props) 
         </Grid.Column>
       </Grid>
     </div>
+  
   )
 }
 

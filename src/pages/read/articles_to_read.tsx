@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ArticleSelect from '../../components/article_select'
 import {SelectedArticle, SetSelectedArticle} from '../../types'
 
@@ -10,6 +10,7 @@ type Props = {
 
 
 const PageSliceArticlesToRead = ({setSelectedArticle, selectedArticles, selectedArticle}: Props) => {
+
     return (
         <main className="articles-to-read">
             {selectedArticles.length > 0 && (

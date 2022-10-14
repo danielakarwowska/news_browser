@@ -38,7 +38,6 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelect
             />
             </Link>
         </aside>
-        
     )
 }
 

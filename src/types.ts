@@ -1,6 +1,5 @@
 import React, {Dispatch} from "react";
 
-// To co zbierasz z API z newsami
 export type Article = {
     id: string
     title: string

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {Button} from 'semantic-ui-react'
 import ArticlePreview from '../../components/article_preview'
 import {SelectedArticle, SetSelectedArticles} from '../../types'
@@ -6,11 +7,10 @@ import {SelectedArticle, SetSelectedArticles} from '../../types'
 type Props = {
     selectedArticles: SelectedArticle[]
     maxArticlesToSelect: number
-    setReadyToRead: any
     setSelectedArticles: SetSelectedArticles
 }
 
-const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setReadyToRead, setSelectedArticles}: Props) => {
+const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelectedArticles}: Props) => {
 
     const howManyArticles = selectedArticles.length
 
@@ -31,11 +31,12 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setReadyT
                     </ul>
                 )
             }
+            <Link to ={'PageRead'}>
             <Button
                 content="Go to reading"
                 disabled={selectedArticles.length === 0}
-                onClick={() => setReadyToRead(true)}
             />
+            </Link>
         </aside>
         
     )

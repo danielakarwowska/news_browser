@@ -8,13 +8,12 @@ import {Article, SelectedArticle, SetSelectedArticles} from '../types'
 type Props = {
   articles: Article[]
   selectedArticles: SelectedArticle[]
-  setReadyToRead: any
   setSelectedArticles: SetSelectedArticles
 }
 
 const maxArticlesToSelect = 3
 
-const PageArticles = ({articles, selectedArticles, setReadyToRead, setSelectedArticles}: Props) => {
+const PageArticles = ({articles, selectedArticles, setSelectedArticles}: Props) => {
   return (
     <div className="page-articles">
       <Grid>
@@ -29,7 +28,6 @@ const PageArticles = ({articles, selectedArticles, setReadyToRead, setSelectedAr
         <Grid.Column width={6}>
           <PageSliceArticlesList
             selectedArticles={selectedArticles}
-            setReadyToRead={setReadyToRead}
             maxArticlesToSelect={maxArticlesToSelect}
             setSelectedArticles={setSelectedArticles}
           />

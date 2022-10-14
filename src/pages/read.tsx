@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import {Grid} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import {Button, Grid} from 'semantic-ui-react'
 import {Article, SelectedArticle} from '../types'
 import PageSliceArticlesToRead from './read/articles_to_read'
 import PageSliceArticleFull from './read/article_full'
@@ -7,10 +8,9 @@ import PageSliceArticleFull from './read/article_full'
 type Props = {
   articles: Article[]
   selectedArticles: SelectedArticle[]
-  onBackButtonClick: any
 }
 
-const PageRead = ({articles, onBackButtonClick, selectedArticles}) => {
+const PageRead = ({articles, selectedArticles}) => {
 
     const [selectedArticle, setSelectedArticle] = useState<string>(null)
 
@@ -22,7 +22,9 @@ const PageRead = ({articles, onBackButtonClick, selectedArticles}) => {
           </Grid.Column>
           <Grid.Column width={6}>
             <PageSliceArticlesToRead selectedArticle={selectedArticle} selectedArticles={selectedArticles} setSelectedArticle={setSelectedArticle} />
-            <button onClick={onBackButtonClick}>Back and clear</button>
+            <Link to="/">
+            <Button >Back and clear</Button>
+            </Link>
           </Grid.Column>
         </Grid>
       </div>

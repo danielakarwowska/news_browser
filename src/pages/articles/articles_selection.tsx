@@ -9,7 +9,6 @@ type Props = {
     setSelectedArticles: SetSelectedArticles
 }
 
-
 const PageSliceArticlesSelection = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
     return (
         <main className="articles-selection">

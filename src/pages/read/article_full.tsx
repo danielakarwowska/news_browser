@@ -1,6 +1,5 @@
 import React from 'react'
 import Description from '../../components/articles.description'
-import { Button } from 'semantic-ui-react'
 import { Article } from '../../types'
 
 type Props = {

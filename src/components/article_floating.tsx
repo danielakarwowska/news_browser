@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react'
-
 import {Button} from 'semantic-ui-react'
 import {Article, SelectedArticle, SetSelectedArticles} from '../types'
 
@@ -12,9 +11,9 @@ type Props = {
 
 const ArticleFloating = (props: Props) => {
 
-    const {title,description, content, publishedAt, urlToImage} = props.article
+    const {title,description, publishedAt, urlToImage} = props.article
 
-    const isDisabled = !!props.selectedArticles.find(art => art.id === publishedAt)
+    const isDisabled = !!props.selectedArticles.find(art => art.id === publishedAt || (props.selectedArticles.length === props.maxArticlesToSelect))
 
 
     const onClick = useCallback(() => {
@@ -23,7 +22,6 @@ const ArticleFloating = (props: Props) => {
             {
                 id: publishedAt,
                 title: title,
-                content:content,
                 description:description,
                 urlToImage: urlToImage
             }

@@ -5,18 +5,9 @@ import PageArticles from './pages/articles'
 import PageRead from './pages/read'
 import useLocalStorage from './hooks/use_local_storage'
 import { Article, SelectedArticle } from './types'
+import Navbar from './components/Navbar'
 
-// const inicialState = {
-//     articles: [],
-//     selectedArticles: [],
-//     readyToRead: false
-// }
-// const articleReducer = (state, action) => {
-//     return inicialState
-// }
 const App = () => {
-
-    // const [articleState, dispachArticle] = useReducer(articleReducer, inicialState)
 
     const [articles, setArticles] = useState<Article[]>([])
 
@@ -29,6 +20,7 @@ const App = () => {
                 console.log(response.data.articles)
             })
     }, [])
+    
 
     useEffect(() => {
         localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))
@@ -36,6 +28,7 @@ const App = () => {
     
     return (
         <BrowserRouter>
+            <Navbar/>
         <Routes>
             <Route path="/" element={<PageArticles
                                         articles={articles}

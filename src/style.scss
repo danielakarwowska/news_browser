@@ -1,13 +1,10 @@
-
-body {
-    text-align: center;
-    padding: 2rem;
+ul{
+    list-style: none;
 }
 
 @import 'components/article_floating.scss';
-@import 'components/article_preview.scss';
 @import 'components/article_select.scss';
 @import 'pages/articles.scss';
-@import 'pages/read.scss';
 @import 'pages/read/articles_full.scss';
-@import 'components/articles.description.scss'
+@import 'components/articles.description.scss';
+@import 'components/Navbar.scss';

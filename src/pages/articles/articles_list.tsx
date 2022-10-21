@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button} from 'semantic-ui-react'
+import {Button, Header, List, Segment} from 'semantic-ui-react'
 import ArticlePreview from '../../components/article_preview'
 import {SelectedArticle, SetSelectedArticles} from '../../types'
 
@@ -16,23 +16,27 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelect
 
     return (
         <aside className="articles-list">
-            <h3>Selected articles</h3>
-            <p>You chose <strong>{howManyArticles}</strong> articles to read. Maxium selection is <strong>{maxArticlesToSelect}</strong></p>
+                <Header as='h2' icon textAlign='center'>
+                <Header.Content>Selected articles</Header.Content>
+                </Header>
+            <Header as="h4" textAlign='center'>You chose <strong>{howManyArticles}</strong> articles to read. Maxium selection is <strong>{maxArticlesToSelect}</strong></Header>
             {
                 howManyArticles > 0 && (
                     <ul className="articles-list__list">
                         {
                             selectedArticles.map(selectedArticle => (
+                                <Segment>
                                 <li key={`preview_${selectedArticle.id}`}>
                                     <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
                                 </li>
+                                </Segment>
                             ))
                         }
                     </ul>
                 )
             }
             <Link to ={'PageRead'}>
-            <Button
+            <Button size='large' fluid color='black'
                 content="Go to reading"
                 disabled={selectedArticles.length === 0}
             />

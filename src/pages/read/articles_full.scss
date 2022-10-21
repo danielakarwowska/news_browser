@@ -1,4 +1,16 @@
-.image-url{
-    margin-top: 5%;
-    width: 60%;
+.description {
+    padding: 40px;
+    margin: 20px; 
+    font-size: 20px;
+    margin: 30px;
+    
+
+    ::first-line{
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+.title_description{
+    margin: 20px;
 }

@@ -11,7 +11,7 @@ type Props = {
   setSelectedArticles: SetSelectedArticles
 }
 
-const maxArticlesToSelect = 3
+const maxArticlesToSelect = 15
 
 const PageArticles = ({articles, selectedArticles, setSelectedArticles}: Props) => {
   return (

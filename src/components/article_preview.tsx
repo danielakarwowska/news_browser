@@ -26,7 +26,7 @@ const ArticlePreview = (props: Props) => {
     return (
         <div className="article --preview">
             <strong>{props.article.title}</strong>
-            <Button content="Usuń" onClick={onDeleteClick}/>
+            <Button basic color="orange" size='medium' fluid content="Delete" onClick={onDeleteClick}/>
         </div>
     )
 }

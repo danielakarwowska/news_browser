@@ -13,6 +13,10 @@ type Props = {
 const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelectedArticles}: Props) => {
 
     const howManyArticles = selectedArticles.length
+    if(howManyArticles === 0){
+        return <h2>No aticle selected</h2>
+    }
+
 
     return (
         <aside className="articles-list">

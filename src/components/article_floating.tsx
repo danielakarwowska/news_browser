@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button, Container, Header, Table } from 'semantic-ui-react'
+import { Button, Header, } from 'semantic-ui-react'
 import { Article, SelectedArticle, SetSelectedArticles } from '../types'
 
 type Props = {
@@ -28,13 +28,13 @@ const ArticleFloating = (props: Props) => {
         ])
     }, [props.setSelectedArticles, publishedAt, title])
     return (
-        <Table.Header>
+
             <div className="article --floating">
                 <Header as='h2'>{title}</Header>
                 <Header as='h4'>{description}</Header>
-                <Button fluid disabled={isDisabled} content="Dodaj do listy" color='black' onClick={() => onClick()} />
+                <Button fluid disabled={isDisabled} content="Add to selected" color='black' onClick={() => onClick()} />
             </div>
-        </Table.Header>
+
     )
 }
 

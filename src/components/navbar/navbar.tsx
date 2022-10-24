@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import { Segment, Image } from "semantic-ui-react"
+import { Segment, Image, Grid } from "semantic-ui-react"
+import Category from './category'
 
 const Navbar = () => {
-    let time = new Date().toTimeString().slice(0, 8)
+    const time = new Date().toTimeString().slice(0, 8)
     const [currentTime, setCurrentTime] = useState(time)
     const updateTime = () => {
         let time = new Date().toTimeString().slice(0, 8)
@@ -13,13 +14,18 @@ const Navbar = () => {
     const currentDate = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`
     return (
         <Segment>
-            <div className="nav-bar">
-                <div className="clock">
-                    <h1>{currentDate}</h1>
-                    <h2>{currentTime}</h2>
-                </div>
+        <Grid columns='three' divided>
+            <Grid.Column>
+                <h1>{currentDate}</h1>
+                <h2>{currentTime}</h2>
+            </Grid.Column>
+            <Grid.Column>
                 <Image centered bordered className="logo" src="https://cdn.discordapp.com/attachments/915912641548009522/1032732229899649045/News_Website.jpg" />
-            </div>
+            </Grid.Column>
+            <Grid.Column>
+                <Category />
+            </Grid.Column>
+        </Grid>
         </Segment>
     )
 }

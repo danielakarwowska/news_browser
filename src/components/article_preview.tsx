@@ -19,7 +19,7 @@ const ArticlePreview = (props: Props) => {
             // 2. usunac element
             _selectedArticles.splice(index, 1)
             // 3. zapisac nowa tablice bez tego elementu (zwrocic wewnatrz setSelectedArticles)
-            return _selectedArticles
+            return _selectedArticles 
         })
     }, [])
 

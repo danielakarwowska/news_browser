@@ -5,7 +5,7 @@ import PageArticles from './pages/articles'
 import PageRead from './pages/read'
 import useLocalStorage from './hooks/use_local_storage'
 import { Article, SelectedArticle } from './types'
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar/navbar'
 
 const App = () => {
 

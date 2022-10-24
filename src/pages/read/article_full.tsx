@@ -15,9 +15,9 @@ const PageSliceArticleFull = ({ selectedArticle }: Props) => {
                 selectedArticle
                     ? (
                         <Grid width="10">
-                            <Image src={selectedArticle.urlToImage}></Image>   
-                            <p>{selectedArticle.publishedAt}</p>
                             <h1 className='title_description'>{selectedArticle.title}</h1>           
+                            <Image className='url_to_image' size='huge' centered src={selectedArticle.urlToImage}></Image>   
+                            <p>{selectedArticle.publishedAt}</p>
                             <h3 className='description'><Description/></h3>
                             <h4>{selectedArticle.id}</h4>
                         </Grid>

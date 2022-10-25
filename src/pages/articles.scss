@@ -2,6 +2,8 @@
 
     .articles-selection {
         padding: 1rem;
+        position: relative;
+        z-index: 2;
 
 
 
@@ -27,4 +29,20 @@
         }
     }
 
+}
+.articles-selection{
+  -webkit-animation-name: scrool;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: up;
+  -webkit-animation-delay: 0ms;
+  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes scrool {
+    0%{
+        transform: translateY(0)
+    }
+    100%{
+        transform: translateY(-100%);
+    }
 }

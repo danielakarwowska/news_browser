@@ -14,7 +14,7 @@ const App = () => {
     const [selectedArticles, setSelectedArticles] = useLocalStorage('selectedArticles', [])
 
     useEffect(() => {
-        axios.get("https://newsapi.org/v2/everything?q=Apple&from=2022-10-12&sortBy=popularity&language=en&apiKey=992cc5dfe65d43f582c92f6610baab68")
+        axios.get("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=992cc5dfe65d43f582c92f6610baab68")
             .then((response) => {
                 setArticles(response.data.articles)
                 console.log(response.data.articles)

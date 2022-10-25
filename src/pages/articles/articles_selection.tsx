@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
 import ArticleFloating from '../../components/article_floating'
+import Bubbles from '../../components/animation/bubbles'
 import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
 
 type Props = {
@@ -15,7 +16,8 @@ const PageSliceArticlesSelection = ({articles, maxArticlesToSelect, selectedArti
         <Container className='container' >
         <main className="articles-selection">
             {articles.length > 0 && (
-                <ul className="articles-selection__list">
+                <ul className="articles-selection__list" >
+                     <Bubbles/>
                     {
                         articles.map(article =>
                             <li key={article.id}>
@@ -24,7 +26,7 @@ const PageSliceArticlesSelection = ({articles, maxArticlesToSelect, selectedArti
                                     selectedArticles={selectedArticles}
                                     maxArticlesToSelect={maxArticlesToSelect}
                                     setSelectedArticles={setSelectedArticles}
-                                />
+                                />                                
                             </li>
                         )
                     }

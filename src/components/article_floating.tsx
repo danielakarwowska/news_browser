@@ -30,16 +30,11 @@ const ArticleFloating = (props: Props) => {
     return (
 
             <div className="article --floating">
-                <Header as='h2'>{title}</Header>
-                <Header as='h4'>{description}</Header>
-                <Button fluid disabled={isDisabled} content="Add to selected" color='black' onClick={() => onClick()} />
+                <Header as='h4' >{title}</Header>
+                <Button size='medium' fluid disabled={isDisabled} content="Add to selected" color='black' onClick={() => onClick()} />
             </div>
 
     )
 }
 
 export default ArticleFloating
-
-/*
-<Button content="Dodaj do listy" onClick={() => onClick(props.id, props.title)}/>
-*/

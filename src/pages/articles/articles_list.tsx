@@ -14,7 +14,7 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelect
 
     const howManyArticles = selectedArticles.length
     if(howManyArticles === 0){
-        return <h2>No aticle selected</h2>
+        return <h2></h2>
     }
 
 
@@ -27,15 +27,15 @@ const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelect
             {
                 howManyArticles > 0 && (
                     <ul className="articles-list__list">
+                             <Segment>
                         {
                             selectedArticles.map(selectedArticle => (
-                                <Segment>
                                 <li key={`preview_${selectedArticle.id}`}>
                                     <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
                                 </li>
-                                </Segment>
                             ))
                         }
+                        </Segment>
                     </ul>
                 )
             }

@@ -1,0 +1,29 @@
+.nav_menu{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+.general
+.sports
+.business
+.health{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.mobile_menu_icon{
+    display: none;
+}
+@media screen and (max-width: 780px) {
+
+}

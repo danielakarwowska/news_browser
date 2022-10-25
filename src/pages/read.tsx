@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import { Link } from 'react-router-dom'
 import {Button, Grid} from 'semantic-ui-react'
 import {Article, SelectedArticle} from '../types'
@@ -14,6 +14,10 @@ const PageRead = ({articles, selectedArticles}) => {
 
     const [selectedArticle, setSelectedArticle] = useState<string>(null)
 
+    // const removeListOfSelected = useCallback((index) => {
+    //   setSelectedArticle(currentSelectedArticle => currentSelectedArticle.filter((item, i) => i !== index))
+    // }, [])
+    
     return (
         <div className="page-preview">
         <Grid>

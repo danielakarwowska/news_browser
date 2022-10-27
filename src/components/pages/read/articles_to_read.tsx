@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import ArticleSelect from '../../components/article_select'
-import { SelectedArticle, SetSelectedArticle } from '../../types'
-import PageSliceArticlesList from '../../pages/articles/articles_list'
+import ArticleSelect from '../../article_select'
+import { SelectedArticle, SetSelectedArticle } from '../../../types'
+import PageSliceArticlesList from '../articles/articles_list'
 import { Header, Segment, Table } from 'semantic-ui-react'
 
 type Props = {

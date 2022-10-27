@@ -7,8 +7,8 @@ const Navbar = () => {
         <Segment className="navbar_container">
             <Grid columns='three' divided >
                 <Grid.Column>
-                    <Statistic>
-                        <Statistic.Value>2,204</Statistic.Value>
+                    <Statistic className="statistic">
+                        <Statistic.Value >2,204</Statistic.Value>
                         <Statistic.Label>Views</Statistic.Label>
                     </Statistic>
                 </Grid.Column>

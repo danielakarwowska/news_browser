@@ -1,14 +1,24 @@
-import React, { useState } from "react"
+import React, { Fragment, useState } from "react"
+import { Dropdown } from "semantic-ui-react"
+import { Link } from "react-router-dom"
 
 const RightNav = () => {
-    return(
-        <div className="nav_menu">
-            <ul className="nav_links">
-                <li className="general">General</li>
-                <li className="sports">Sports</li>
-                <li className="business">Business</li>
-                <li className="health">Health</li>
-            </ul>
+
+    const options = [
+        { key: 'Home', text: 'Home',value: 'Home', icon: 'user', as: Link, to: '/' },
+        { key: 'Sports', text: 'Sports',value: 'Sports', icon: 'baseball ball', as: Link, to: 'sports_category' },
+        { key: 'Business', text: 'Business',value: 'Business', icon: 'monero', as: Link, to: 'business_category' },
+    ]
+
+    return (
+        <div className="menu_dropdown">
+            <h1>Choose your category</h1>
+            <Dropdown
+                search
+                selection
+                options={options}
+                placeholder='Category Options'
+            />
         </div>
     )
 }

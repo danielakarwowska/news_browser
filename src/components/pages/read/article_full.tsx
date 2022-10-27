@@ -1,12 +1,11 @@
 import React from 'react'
 import { Grid, Header, Image } from 'semantic-ui-react'
-import Description from '../../components/articles.description'
-import { Article } from '../../types'
+import Description from '../../articles_description'
+import { Article } from '../../../types'
 
 type Props = {
     selectedArticle: Article
 }
-
 
 const PageSliceArticleFull = ({ selectedArticle }: Props) => {
     return (

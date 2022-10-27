@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'semantic-ui-react'
-import ArticleFloating from '../../components/article_floating'
-import Bubbles from '../../components/animation/bubbles'
-import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
+import ArticleFloating from '../../article_floating'
+import Bubbles from '../../animation/bubbles'
+import {Article, SelectedArticle, SetSelectedArticles} from '../../../types'
 
 type Props = {
     articles: Article[]
@@ -13,7 +13,7 @@ type Props = {
 
 const PageSliceArticlesSelection = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
     return (
-        <Container className='container' >
+        <Container >
         <main className="articles-selection">
             {articles.length > 0 && (
                 <ul className="articles-selection__list" >

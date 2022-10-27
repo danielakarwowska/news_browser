@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {Button, Header, List, Segment} from 'semantic-ui-react'
-import ArticlePreview from '../../components/article_preview'
-import {SelectedArticle, SetSelectedArticles} from '../../types'
+import ArticlePreview from '../../article_preview'
+import {SelectedArticle, SetSelectedArticles} from '../../../types'
 
 type Props = {
     selectedArticles: SelectedArticle[]

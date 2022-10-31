@@ -2,14 +2,17 @@ import React, { useState } from "react"
 import { Segment, Image, Grid, Statistic } from "semantic-ui-react"
 import RightNav from './right_nav'
 
-const Navbar = () => {
+type Props = {
+totalSum: number
+}
+const Navbar = ({totalSum}: Props) => {
     return (
         <Segment className="navbar_container">
             <Grid columns='three' divided >
                 <Grid.Column>
                     <Statistic className="statistic">
-                        <Statistic.Value >2,204</Statistic.Value>
-                        <Statistic.Label>Views</Statistic.Label>
+                        <Statistic.Value >{totalSum}</Statistic.Value>
+                        <Statistic.Label>Articles to read</Statistic.Label>
                     </Statistic>
                 </Grid.Column>
                 <Grid.Column>

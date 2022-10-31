@@ -23,7 +23,7 @@ const PageRead = ({articles, selectedArticles}) => {
         <Grid.Column width={6}>
           <PageSliceArticlesToRead selectedArticle={selectedArticle} selectedArticles={selectedArticles} setSelectedArticle={setSelectedArticle} />
           <Link to="/">
-          <Button size='large'  content="Back" fluid color='black' ></Button>
+          <Button size='large' content="Back" fluid color='black' ></Button>
           </Link>
         </Grid.Column>
       </Grid>

@@ -1,7 +1,7 @@
 {
   "include": [
       "src/*"
-, "src/components/category"  ],
+, "src/components/data"  ],
   "compilerOptions": {
     "module": "commonjs",
     "lib": [

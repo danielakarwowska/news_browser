@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image, Segment } from 'semantic-ui-react'
+import { Button, Image } from 'semantic-ui-react'
 import { SelectedArticle, SetSelectedArticle } from '../types'
 
 type Props = {

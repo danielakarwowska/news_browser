@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { Segment, Image, Grid, Statistic } from "semantic-ui-react"
 import RightNav from './right_nav'
+import {setCategory} from '../../types'
 
 type Props = {
-totalSum: number
+totalSum: number,
+setCategory: setCategory
 }
-const Navbar = ({totalSum}: Props) => {
+const Navbar = ({totalSum,setCategory}: Props) => {
     return (
         <Segment className="navbar_container">
             <Grid columns='three' divided >
@@ -19,7 +21,7 @@ const Navbar = ({totalSum}: Props) => {
                     <Image centered bordered className="logo" src="https://cdn.discordapp.com/attachments/915912641548009522/1032732229899649045/News_Website.jpg" />
                 </Grid.Column>
                 <Grid.Column>
-                    <RightNav />
+                    <RightNav setCategory={setCategory} />
                 </Grid.Column>
             </Grid>
         </Segment>

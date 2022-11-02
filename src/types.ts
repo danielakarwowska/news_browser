@@ -1,4 +1,4 @@
-import React, {Dispatch} from "react";
+import React, {Dispatch, SetStateAction} from "react";
 
 export type Article = {
     id: string
@@ -14,6 +14,8 @@ export type SelectedArticle = {
     description: string
     urlToImage: any
 }
+
+export type setCategory = Dispatch<SetStateAction<string>>
 
 export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[]>>
 

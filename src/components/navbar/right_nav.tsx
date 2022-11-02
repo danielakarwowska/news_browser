@@ -1,24 +1,23 @@
 import React from "react"
-import { Dropdown } from "semantic-ui-react"
-import { Link } from "react-router-dom"
+import { Menu } from "semantic-ui-react"
+import categories from '../data/category'
 
-const RightNav = () => {
 
-    const options = [
-        { key: 'Home', text: 'Home',value: 'Home', icon: 'user', as: Link, to: '/' },
-        { key: 'Sports', text: 'Sports',value: 'Sports', icon: 'baseball ball', as: Link, to: 'SportsCategory' },
-        { key: 'Business', text: 'Business',value: 'Business', icon: 'monero', as: Link, to: 'BusinessCategory' },
-    ]
-
+const RightNav = ({ setCategory }) => {
     return (
         <div className="menu_dropdown">
             <h1>Choose your category</h1>
-            <Dropdown
-                search
-                selection
-                options={options}
-                placeholder='Category Options'
-            />
+            <Menu vertical>
+                        {categories.map((category) => (
+                            <Menu.Item
+                                key={category}
+                                value={category}
+                                button="true" onClick={() => setCategory(category)}
+                            >
+                                {category}
+                            </Menu.Item>
+                        ))}
+            </Menu>
         </div>
     )
 }

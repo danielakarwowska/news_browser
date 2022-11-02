@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Button, Header, List, Segment} from 'semantic-ui-react'
+import {Button, Header, Segment} from 'semantic-ui-react'
 import ArticlePreview from '../../article_preview'
 import {SelectedArticle, SetSelectedArticles} from '../../../types'
 

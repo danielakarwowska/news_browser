@@ -13,8 +13,9 @@ type Props = {
 const PageSliceArticlesList = ({selectedArticles, maxArticlesToSelect, setSelectedArticles}: Props) => {
 
     const howManyArticles = selectedArticles.length
+    
     if(howManyArticles === 0){
-        return <h2></h2>
+        return <p></p>
     }
 
 

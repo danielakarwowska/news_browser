@@ -3,11 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import PageArticles from './components/pages/articles'
 import PageRead from './components/pages/read'
-import Footer from './components/footer/footer'
 import useLocalStorage from './hooks/use_local_storage'
 import { Article } from './types'
 import Navbar from './components/navbar/navbar'
-import BusinessCategory from './components/data/category'
 import apikey from  './components/data/config'
 
 const App = () => {
@@ -46,9 +44,8 @@ const App = () => {
                     setSelectedArticles={setSelectedArticles} />} />
                 <Route path="PageRead" element={<PageRead
                     articles={articles}
-                    selectedArticles={selectedArticles} />} />
+                    selectedArticles={selectedArticles}/>} />
             </Routes>
-            <Footer/>
         </BrowserRouter>
 
     )

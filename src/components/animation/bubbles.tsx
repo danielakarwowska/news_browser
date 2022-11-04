@@ -24,7 +24,6 @@ const Bubbles = () => {
         <span></span>
         <span></span>
     </div>
- 
     )
 }
 export default Bubbles

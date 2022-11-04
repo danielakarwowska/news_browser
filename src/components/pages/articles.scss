@@ -15,7 +15,9 @@
         }
 
     }
-
+.button{
+    z-index: 4;
+}
     .articles-list {
         padding: 1rem;
 
@@ -31,7 +33,7 @@
 }
 .articles-selection{
   -webkit-animation-name: scrool;
-  -webkit-animation-duration: 60s;
+  -webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: up;
   -webkit-animation-delay: 0ms;

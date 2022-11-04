@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid} from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import PageSliceArticlesSelection from './articles/articles_selection'
 import PageSliceArticlesList from './articles/articles_list'
 import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
@@ -11,7 +11,7 @@ type Props = {
   setSelectedArticles: SetSelectedArticles
 }
 
-const maxArticlesToSelect = 15
+const maxArticlesToSelect = 5
 
 const PageArticles = ({articles, selectedArticles, setSelectedArticles}: Props) => {
   return (

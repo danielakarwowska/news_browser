@@ -35,6 +35,7 @@ module.exports = () => {
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js'],
+            fallback: { "http": false, "stream": false, "zlib": false, "https": false, "url": false, "assert": false }        
         },
         module: {
             strictExportPresence: true,

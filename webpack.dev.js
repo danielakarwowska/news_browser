@@ -1,6 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin')
+const HtmlReplaceWebpackPlugin = require ('html-replace-webpack-plugin')
 const nanoid = require('nanoid').nanoid
 const {WebpackPluginServe: Serve} = require('webpack-plugin-serve')
 
@@ -51,6 +51,7 @@ module.exports = () => {
         },
         resolve: {
             extensions: ['.ts', '.tsx', '.js'],
+            fallback: { "http": false, "stream": false, "zlib": false, "https": false, "url": false, "assert": false  }        
         },
         watch: true,
         devtool: 'inline-source-map',

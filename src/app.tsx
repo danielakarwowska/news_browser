@@ -18,16 +18,16 @@ const App = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apikey}&category=${category}`;
-                const response = await axios.get(url)
+                const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apikey}&category=${category}`)
                 setArticles(response.data.articles)
                 setTotalSum(response.data.articles.length)
             } catch (error) {
                 console.log("error");
             }
         }
+        
         fetchNews();
-    }, [category]);
+    }, [category])
 
     useEffect(() => {
         localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))

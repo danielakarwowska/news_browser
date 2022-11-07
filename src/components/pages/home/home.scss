@@ -1,4 +1,22 @@
-.page-articles {
+.page-home {
+    height: calc(100vh - $navbarHeight);
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+
+    &__articles {
+        flex-grow: 1;
+        height: 100%;
+        position: relative;
+    }
+
+    &__selected {
+        width: 360px;
+    }
+}
+
+/*
+
     .articles-selection {
         padding: 1rem;
         position: relative;
@@ -47,3 +65,4 @@
         transform: translateY(-100%);
     }
 }
+ */

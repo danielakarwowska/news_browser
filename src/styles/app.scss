@@ -1,0 +1,19 @@
+body {
+  background: #d5d5d5 !important;
+}
+
+#app {
+  height: 100vh;
+}
+
+ul{
+  list-style: none;
+}
+
+#app .ui.button {
+  font-weight: 400;
+}
+
+#app .--no-padding {
+  padding: 0 !important;
+}

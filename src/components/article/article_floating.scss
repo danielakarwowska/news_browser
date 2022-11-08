@@ -1,0 +1,19 @@
+.article.--floating {
+  width: 250px;
+  position: absolute;
+  margin: 1rem;
+
+  .--button {
+    @include Font();
+    font-size: 1.2em;
+    background: #eee;
+    border-radius: 2rem;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 2px 2px #c8c8c8;
+    color: #292929;
+
+    &:hover, &:focus {
+      background: #fff;
+    }
+  }
+}

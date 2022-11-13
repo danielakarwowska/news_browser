@@ -1,29 +1,44 @@
-import React from 'react'
-import Article from '../../../components/article/article'
-import {SelectedArticle, SetSelectedArticles} from '../../../types'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import Articles from '../../../components/article/article'
+import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
 
 type Props = {
    articles: any[]
    selectedArticles: SelectedArticle[]
    maxArticlesToSelect: number
    setSelectedArticles: SetSelectedArticles
+   displayArticles: []
 }
 
-const HomeArticles = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
+const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSelectedArticles }: Props) => {
+
+   let displayArticles = []
+   let i = 0
+   useEffect(() => {
+      setTimeout(() => {
+         if (articles && articles.length >= i) {
+            displayArticles.push(articles[i]);
+            i++;
+         }
+      }, 500)
+   }, [articles])
+   console.log(displayArticles)
+
    return (
       <main className="page-home__articles">
-         {articles.length > 0 && (
+         {
             articles.map((article, index) =>
-               <Article.Floating
-                  xPos={50*index}
-                  yPos={25*index}
+               <Articles.Floating
+                  xPos={25 * index}
+                  yPos={25 * index}
                   article={article}
                   selectedArticles={selectedArticles}
                   maxArticlesToSelect={maxArticlesToSelect}
                   setSelectedArticles={setSelectedArticles}
                />
             )
-         )}
+         }
       </main>
    )
 }

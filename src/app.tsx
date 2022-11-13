@@ -20,13 +20,13 @@ const App = () => {
          try {
             const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apikey}&category=${category}`)
             setArticles(response.data.articles)
+            console.log(response.data.articles)  
             setTotalSum(response.data.articles.length)
          } catch (error) {
             console.log('error')
          }
       }
-
-      fetchNews()
+        fetchNews()
    }, [category])
 
    useEffect(() => {

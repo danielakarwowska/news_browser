@@ -1,8 +1,8 @@
 import React from 'react'
 import __ArticleFloating from './article_floating'
 
-const Article = () => <div />
+const Articles = () => <div />
 
-Article.Floating = __ArticleFloating
+Articles.Floating = __ArticleFloating
 
-export default Article
+export default Articles

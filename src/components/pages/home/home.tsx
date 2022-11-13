@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Grid} from 'semantic-ui-react'
 import HomeArticles from './home_articles'
 import HomeSelected from './home_selected'

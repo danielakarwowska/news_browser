@@ -10,7 +10,7 @@ type Props = {
 }
 
 const ArticleFloating = ({ article, selectedArticles, maxArticlesToSelect, setSelectedArticles }: Props) => {
-
+    
     const { title, description, publishedAt, urlToImage } = article
 
     const isDisabled = !!selectedArticles.find(art => art.id === publishedAt || (selectedArticles.length === maxArticlesToSelect))

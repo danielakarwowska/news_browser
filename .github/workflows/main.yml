@@ -1,9 +1,9 @@
-name: master push
+name: main push
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   version:
@@ -19,7 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
       with:
         commit-message: 'version increase to {{version}} [skip ci]'
-        target-branch: 'master'
+        target-branch: 'main'
         major-wording: 'MAJOR,major,release'
         minor-wording: 'feat,feature'
         patch-wording: 'fix,docs,refactor,chore'

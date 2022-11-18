@@ -15,7 +15,6 @@ const ArticleFloating = ({ article, selectedArticles, maxArticlesToSelect, setSe
 
     const isDisabled = !!selectedArticles.find(art => art.id === publishedAt || (selectedArticles.length === maxArticlesToSelect))
 
-
     const onClick = useCallback(() => {
         setSelectedArticles(prev => [
             ...prev,
@@ -31,12 +30,11 @@ const ArticleFloating = ({ article, selectedArticles, maxArticlesToSelect, setSe
 
         <div className="article --floating">
             <Header as='h4' >{title}</Header>
-            <Button size='medium' fluid
+            <Button basic color='black' size='medium' fluid
                 disabled={isDisabled}
-                content="Add to selected" color='black'
+                content="Add to selected"
                 onClick={() => onClick()} />
         </div>
-
     )
 }
 

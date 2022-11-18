@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react'
-import {Button, Header} from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 import {Article, SelectedArticle, SetSelectedArticles} from '../../types'
 
 type Props = {
@@ -28,7 +28,7 @@ const __ArticleFloating = ({xPos, yPos, article, selectedArticles, maxArticlesTo
    }, [setSelectedArticles, publishedAt, title, selectedArticles])
    return (
       <div className="article --floating" style={{left: xPos, top: yPos}}>
-         <Button
+         <Button 
             fluid
             className="--button"
             disabled={isDisabled}

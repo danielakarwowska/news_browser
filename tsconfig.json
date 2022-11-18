@@ -1,7 +1,7 @@
 {
   "include": [
       "src/*"
-, "src/components/data"  ],
+, "src/components/data", "src/components/__tests__"  ],
   "compilerOptions": {
     "module": "commonjs",
     "lib": [

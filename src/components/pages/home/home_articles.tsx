@@ -22,11 +22,11 @@ const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSele
          _myList.push(articles[i])
          setList(_myList)
          i++
-// console.log(_myList)
       }, 1000)
       return () => clearInterval(timer)
    }
    }, [articles])
+   
    return (
       <main className="page-home__articles">
          {myList.map((article, index) =>

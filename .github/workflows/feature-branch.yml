@@ -1,0 +1,22 @@
+name: feature branch push
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup
+      uses: actions/setup-node@v3
+      env:
+        FORCE_COLOR: 0
+      with:
+        node-version: 16.13.1
+        cache: 'npm'
+    - run: npm install
+    - run: npm run test
+    - run: npm run build

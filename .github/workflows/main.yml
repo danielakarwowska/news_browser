@@ -1,0 +1,26 @@
+name: master push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.ACTION_GITHUB_TOKEN }}
+    - name: CI chores
+      uses: phips28/gh-action-bump-version@v9.0.16
+      env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
+      with:
+        commit-message: 'version increase to {{version}} [skip ci]'
+        target-branch: 'master'
+        major-wording: 'MAJOR,major,release'
+        minor-wording: 'feat,feature'
+        patch-wording: 'fix,docs,refactor,chore'
+        skip-tag: 'true'

@@ -29,7 +29,7 @@ const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSele
    
    return (
       <main className="page-home__articles">
-         {myList.map((article, index) =>
+         {articles.map((article, index) =>
                <Articles.Floating
                key={index}
                   xPos={50 * index}
@@ -40,7 +40,6 @@ const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSele
                   setSelectedArticles={setSelectedArticles}
                />
          )}
-         {/* {articles.map((num) =>  <div key={num}> {num}</div>)} */}
       </main>
    )
 }

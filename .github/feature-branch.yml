@@ -15,7 +15,7 @@ jobs:
       env:
         FORCE_COLOR: 0
       with:
-        node-version: [8.x, 10.x, 12.x, 18.x]
+        node-version: [16.x]
         cache: 'npm'
     - run: npm install
     - run: npm run test

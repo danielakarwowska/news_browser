@@ -4,9 +4,8 @@ import axios from 'axios'
 import PageHome from './components/pages/home/home'
 import PageRead from './components/pages/read'
 import useLocalStorage from './hooks/use_local_storage'
-import {Article} from './types'
+import {Article, setCategory} from './types'
 import Navbar from './components/navbar/navbar'
-import HomeDisplay from './components/pages/home/home_display'
 import apikey from './components/data/config'
 
 const App = () => {

@@ -14,12 +14,11 @@ const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSele
    const [myList, setList] = useState([])
    let i = 0
    useEffect(() => {
-      console.log('start')
       if (!articles.length) return
       const timer = setInterval(() => {
-         setList((prevMyList) => [...prevMyList, articles[i]]);
+         setList((prevMyList) => [...prevMyList, articles[i]])
          i++
-         if (i === articles.length - 1) clearInterval(timer)
+         if (i === articles.length-1 ) clearInterval(timer)
       }, 1000)
       return () => clearInterval(timer)
    }, [articles])

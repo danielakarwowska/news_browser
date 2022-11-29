@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/danielakarwowska/workout#readme",
   "dependencies": {
+    "@aws-cdk/aws-s3": "^1.181.1",
     "@aws-cdk/core": "^1.181.1",
     "aws-cdk-lib": "2.53.0",
     "constructs": "^10.1.174",

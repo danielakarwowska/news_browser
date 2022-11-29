@@ -1,0 +1,62 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "WebAppStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "WebAppStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/WebAppStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:510:26)",
+              "process.emit (node:events:390:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/cyberforce/PROJ/news_browser/node_modules/@cspotcode/source-map-support/source-map-support.js:745:40)"
+            ]
+          }
+        ],
+        "/WebAppStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/cyberforce/PROJ/news_browser/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:510:26)",
+              "process.emit (node:events:390:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/cyberforce/PROJ/news_browser/node_modules/@cspotcode/source-map-support/source-map-support.js:745:40)"
+            ]
+          }
+        ]
+      },
+      "displayName": "WebAppStack"
+    }
+  }
+}

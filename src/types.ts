@@ -21,6 +21,6 @@ export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[
 
 export type SetSelectedArticle = Dispatch<React.SetStateAction<string>>
 
-export type setCategory = Dispatch<React.SetStateAction<string>>
+export type SetCategory = Dispatch<React.SetStateAction<string>>
 
 

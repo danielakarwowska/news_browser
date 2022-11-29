@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import Articles from '../../../components/article/article'
-import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
+import {Article, SelectedArticle, SetSelectedArticles} from '../../../types'
 
 type Props = {
    articles: Article[]
@@ -9,16 +9,16 @@ type Props = {
    setSelectedArticles: SetSelectedArticles
 }
 
-const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSelectedArticles }: Props) => {
+const HomeArticles = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
 
-   const [myList, setList] = useState([])
+   const [myList, setList] = useState<Article[]>([])
    let i = 0
    useEffect(() => {
       if (!articles.length) return
       const timer = setInterval(() => {
          setList((prevMyList) => [...prevMyList, articles[i]])
          i++
-         if (i === articles.length-1 ) clearInterval(timer)
+         if (i === articles.length - 1) clearInterval(timer)
       }, 1000)
       return () => clearInterval(timer)
    }, [articles])

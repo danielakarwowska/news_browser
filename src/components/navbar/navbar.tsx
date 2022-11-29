@@ -1,11 +1,11 @@
 import React from "react"
 import { Segment, Image, Grid, Statistic, Button, Icon } from "semantic-ui-react"
 import RightNav from './right_nav'
-import {setCategory} from '../../types'
+import {SetCategory} from '../../types'
 
 type Props = {
 totalSum: number,
-setCategory: setCategory
+setCategory: SetCategory
 }
 const Navbar = ({totalSum,setCategory}: Props) => {
 

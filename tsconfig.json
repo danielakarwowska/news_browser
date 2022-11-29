@@ -1,4 +1,6 @@
 {
+  "baseUrl": "./",
+  "outDir": "build",
   "include": [
     "src/*",
     "src/components/data",

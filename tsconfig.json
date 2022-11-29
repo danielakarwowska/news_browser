@@ -1,15 +1,40 @@
 {
+  "baseUrl": "./",
+  "outDir": "build",
   "include": [
-      "src/*"
-, "src/components/data", "src/components/__tests__"  ],
+    "src/*",
+    "src/components/data",
+    "src/components/__tests__"
+  ],
   "compilerOptions": {
+    "target": "es6",
     "module": "commonjs",
     "lib": [
-      "esnext",
+      "es2020",
       "dom"
     ],
-    "types": ["node", "jest", "@testing-library/jest-dom"],
-    "target": "es5",
+    "declaration": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true

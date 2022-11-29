@@ -4,6 +4,6 @@ import App from './app'
 
 import './styles/imports.scss'
 
-const dom = document.getElementById('app')
-const root = createRoot(dom)
+const element = document.getElementById('app')!
+const root = createRoot(element)
 root.render(<App />)

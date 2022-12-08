@@ -1,5 +1,9 @@
 {
   "acknowledged-issue-numbers": [
     19836
-  ]
+  ],
+  "hosted-zone:account=780516830267:domainName=aleksandrakarwowska.pl:region=eu-west-1": {
+    "Id": "/hostedzone/Z03540363DR35O6Y8FCMM",
+    "Name": "aleksandrakarwowska.pl."
+  }
 }

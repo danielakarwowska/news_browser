@@ -1,5 +1,5 @@
 import React from "react"
-import { Segment, Image, Grid, Statistic, Button, Icon } from "semantic-ui-react"
+import { Segment, Image, Grid, Statistic } from "semantic-ui-react"
 import RightNav from './right_nav'
 import {SetCategory} from '../../types'
 

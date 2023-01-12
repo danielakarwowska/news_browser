@@ -6,7 +6,6 @@ import {SetCategory} from '../../types'
 type Props = {
    setCategory: SetCategory
 }
-
 const RightNav = ({setCategory}: Props) => {
    return (
       <div className="menu_dropdown">
@@ -16,8 +15,7 @@ const RightNav = ({setCategory}: Props) => {
                <Menu.Item
                   key={category}
                   value={category}
-                  button="true" onClick={() => setCategory(category)}
-               >
+                  button="true" onClick={() => setCategory(category)}>
                   {category}
                </Menu.Item>
             ))}

@@ -7,6 +7,8 @@
     "src/components/__tests__"
   ],
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "target": "es6",
     "module": "commonjs",
     "lib": [

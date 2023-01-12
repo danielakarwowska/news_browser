@@ -1,3 +1,4 @@
+
 const categories = [
     'general',
     'sports',

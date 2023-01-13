@@ -5,7 +5,6 @@ import PageRead from './components/pages/read'
 import useLocalStorage from './hooks/use_local_storage'
 import { Article } from './types'
 import Navbar from './components/navbar/navbar'
-import axios from 'axios'
 
 const App = () => {
 
@@ -14,29 +13,15 @@ const App = () => {
    const [articles, setArticles] = useState<Article[]>([])
    const [sum, setTotalSum] = useState<number>(0)
    const [selectedArticles, setSelectedArticles] = useLocalStorage('selectedArticles', [])
-   const [category, setCategory] = useState('general')
 
-   // useEffect(() => {
-   //    const fetchNews = async () => {
-   //       try {
-   //          const response = await axios.get(`http://localhost:3000/articles`)
-   //          setArticles(response.data.articles)
-   //          setTotalSum(response.data.articles.length)
-   //          console.log(category)
-   //       } catch (error) {
-   //          console.log('error')
-   //       }
-   //    }
-   //      fetchNews()
-   // }, [category])
    useEffect(() => {
-      fetch('http://localhost:3000/articlesgeneral')
+      fetch('http://localhost:3000/articles')
          .then((res) => res.json())
          .then((result) => {
             setArticles(result)
             setTotalSum(result.length)
          })
-   }, [category])
+   }, [])
 
    useEffect(() => {
       localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))
@@ -44,8 +29,7 @@ const App = () => {
 
    return (
       <BrowserRouter>
-         <Navbar totalSum={sum}
-            setCategory={setCategory} />
+         <Navbar totalSum={sum} articles={articles} />
          <Routes>
             <Route path="/" element={(
                <PageHome

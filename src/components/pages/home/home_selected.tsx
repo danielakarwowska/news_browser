@@ -1,22 +1,22 @@
 import React from 'react'
-import {Button, Container, Header, Segment} from 'semantic-ui-react'
-import ArticleFloating from '../../article_floating'
+import { Button, Container, Header, Segment } from 'semantic-ui-react'
+import ArticleFloating from '../../article/article_floating'
 import Bubbles from '../../animation/bubbles'
 import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
 import ArticlePreview from '../../article_preview'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 type Props = {
-    selectedArticles: SelectedArticle[]
-    maxArticlesToSelect: number
-    setSelectedArticles: SetSelectedArticles
+   selectedArticles: SelectedArticle[]
+   maxArticlesToSelect: number
+   setSelectedArticles: SetSelectedArticles
 }
 
-const HomeSelected = ({selectedArticles, maxArticlesToSelect, setSelectedArticles}: Props) => {
+const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticles }: Props) => {
 
    const howManyArticles = selectedArticles.length
 
-   if(howManyArticles === 0){
+   if (howManyArticles === 0) {
       return <p></p>
    }
 
@@ -42,10 +42,10 @@ const HomeSelected = ({selectedArticles, maxArticlesToSelect, setSelectedArticle
                </ul>
             )
          }
-         <Link to ={'PageRead'}>
+         <Link to={'PageRead'}>
             <Button size='large' fluid color='black'
-                    content="Go to reading"
-                    disabled={selectedArticles.length === 0}
+               content="Go to reading"
+               disabled={selectedArticles.length === 0}
             />
          </Link>
       </aside>

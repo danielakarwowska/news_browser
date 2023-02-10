@@ -1,27 +1,25 @@
 import React from 'react'
-import {Menu} from 'semantic-ui-react'
-import categories from '../data/category'
-import {SetCategory} from '../../types'
+import { Select } from 'semantic-ui-react'
 
 type Props = {
-   setCategory: SetCategory
+   onFilterSelected: (selectOption: any) => void
 }
+const RightNav = ({ onFilterSelected }: Props) => {
+   const option = [
+      { key: 'general', text: 'general', value: 'general' },
+      { key: 'sports', text: 'sports', value: 'sports' },
+      { key: 'business', text: 'business', value: 'business' }
+   ]
 
-const RightNav = ({setCategory}: Props) => {
+   const handlerCategoryChange = (e: any, data: any) => {
+      onFilterSelected(data.value)
+      console.log(data.value)
+   }
    return (
       <div className="menu_dropdown">
          <h1>Choose your category</h1>
-         <Menu vertical>
-            {categories.map((category) => (
-               <Menu.Item
-                  key={category}
-                  value={category}
-                  button="true" onClick={() => setCategory(category)}
-               >
-                  {category}
-               </Menu.Item>
-            ))}
-         </Menu>
+         <Select onChange={handlerCategoryChange}
+            placeholder="All category" options={option} />
       </div>
    )
 }

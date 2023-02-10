@@ -10,7 +10,7 @@ type Props = {
 }
 
 const HomeArticles = ({articles, maxArticlesToSelect, selectedArticles, setSelectedArticles}: Props) => {
-
+   
    const [myList, setList] = useState<Article[]>([])
    let i = 0
    useEffect(() => {

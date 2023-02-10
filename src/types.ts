@@ -1,12 +1,13 @@
 import React, {Dispatch} from "react";
 
 export type Article = {
+    filter(arg0: (ari: string) => any): unknown;
     id: string
     title: string
     description : string
     urlToImage: any
     publishedAt: string
-
+    category: string
 }
 export type setArticles = []
 

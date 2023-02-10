@@ -1,6 +1,5 @@
 import React from 'react'
 import { Select } from 'semantic-ui-react'
-import { SetCategory } from '../../types'
 
 type Props = {
    onFilterSelected: (selectOption: any) => void
@@ -14,6 +13,7 @@ const RightNav = ({ onFilterSelected }: Props) => {
 
    const handlerCategoryChange = (e: any, data: any) => {
       onFilterSelected(data.value)
+      console.log(data.value)
    }
    return (
       <div className="menu_dropdown">

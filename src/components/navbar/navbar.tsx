@@ -1,45 +1,42 @@
-import React, { useState } from "react"
-import { Segment, Image, Grid, Statistic } from "semantic-ui-react"
-import RightNav from './right_nav'
+import React from "react"
+import { Segment, Image, Grid, Statistic, DropdownItemProps, Container } from "semantic-ui-react"
+import LeftNav from './left_nav'
 import { Article } from '../../types'
 
 type Props = {
     totalSum: number,
     articles: Article[]
+    category:  DropdownItemProps[]|any
+    setCategory: any
 }
-const Navbar = ({ articles, totalSum }: Props) => {
-    // const [filterCategory, setFilterCategory] = useState('')
-    // console.log(filterCategory)
 
-    // const filterArticles = articles.filter((ari: Article) => {
-    //     if (filterCategory === "All category") {
-    //         return ari
-    //     } else if (filterCategory === "sports") {
-    //         return ari.category === "sports"
-    //     } else if (filterCategory === "business") {
-    //         return ari.category === "business"
-    //     }
-    // })
-    // const onFilterSelected = (selectOption: any) => {
-    //     console.log(selectOption)
-    // }
+const Navbar = ({ articles, totalSum, category, setCategory }: Props) => {
+
+
+    const onFilterSelected = (selectOption: string) => {
+        setCategory(selectOption)
+        console.log(selectOption)
+    }
     return (
-        <Segment className="navbar_container">
-            <Grid columns='three' divided >
-                <Grid.Column>
-                    <Statistic className="statistic">
-                        <Statistic.Value >{totalSum}</Statistic.Value>
-                        <Statistic.Label>Articles to read</Statistic.Label>
-                    </Statistic>
+        <Grid className="navbar_container"textAlign='center' verticalAlign="middle">
+            <Grid.Row columns={3}>
+                <Grid.Column >
+                <h1>Choose your category</h1>
+                <LeftNav 
+                    onFilterSelected={onFilterSelected}
+                    category={category} />
                 </Grid.Column>
                 <Grid.Column>
                     <Image centered bordered className="logo" src="https://cdn.discordapp.com/attachments/915912641548009522/1032732229899649045/News_Website.jpg" />
                 </Grid.Column>
-                {/* <Grid.Column>
-                    <RightNav onFilterSelected={onFilterSelected} />
-                </Grid.Column> */}
-            </Grid>
-        </Segment>
+                <Grid.Column >
+                    <Statistic inverted>
+                        <Statistic.Value >{totalSum}</Statistic.Value> 
+                         <Statistic.Label>Articles to read</Statistic.Label>
+                         </Statistic>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
     )
 }
 export default Navbar

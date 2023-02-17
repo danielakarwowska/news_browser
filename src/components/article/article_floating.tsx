@@ -29,9 +29,11 @@ const __ArticleFloating = ({ xPos, yPos, article, selectedArticles, maxArticlesT
       ])
    }, [setSelectedArticles, publishedAt, title, selectedArticles])
    return (
-      <div className="article --floating" style={{ left: xPos, top: yPos }}>
+      <div className="article --floating" 
+      style={{ left: xPos, top: yPos }}
+      >
          <Button
-            fluid
+            fluid color='orange'
             className="--button"
             disabled={isDisabled}
             content={title}

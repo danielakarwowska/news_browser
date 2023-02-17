@@ -3,17 +3,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PageHome from './components/pages/home/home'
 import PageRead from './components/pages/read'
 import useLocalStorage from './hooks/use_local_storage'
-import { Article } from './types'
+import { Article, Category } from './types'
 import Navbar from './components/navbar/navbar'
 import axios from 'axios'
+import category from './components/data/category'
+import { DropdownItemProps } from 'semantic-ui-react'
 
 const App = () => {
-
-   //json-server --watch db.json
 
    const [articles, setArticles] = useState<Article[]>([])
    const [sum, setTotalSum] = useState<number>(0)
    const [selectedArticles, setSelectedArticles] = useLocalStorage('selectedArticles', [])
+   const [cat, setCategory] = useState('general')
 
    useEffect(() => {
       const fetchNews = async () => {
@@ -21,7 +22,7 @@ const App = () => {
             const response = await axios.get(`https://lfc3csdffb.execute-api.eu-west-1.amazonaws.com/newLIve/articles`)
             setArticles(response.data.body)
             console.log(response.data.body)
-            setTotalSum(response.data.body.totalResults)
+            setTotalSum(response.data.body.length)
          } catch (error) {
             console.log('error')
          }
@@ -32,16 +33,22 @@ const App = () => {
    useEffect(() => {
       localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))
    }, [selectedArticles])
-   
+   console.log(category)
+   console.log(cat)
    return (
       <BrowserRouter>
-         <Navbar totalSum={sum} articles={articles} />
+         <Navbar 
+         totalSum={sum} 
+         articles={articles}
+         category={category}
+         setCategory={setCategory} />
          <Routes>
             <Route path="/" element={(
                <PageHome
                   articles={articles}
                   selectedArticles={selectedArticles}
-                  setSelectedArticles={setSelectedArticles} />
+                  setSelectedArticles={setSelectedArticles}
+                  cat={cat}/>
             )} />
             <Route path="PageRead" element={<PageRead
                articles={articles}

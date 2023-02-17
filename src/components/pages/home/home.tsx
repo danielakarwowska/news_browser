@@ -9,11 +9,15 @@ type Props = {
    articles: Article[]
    selectedArticles: SelectedArticle[]
    setSelectedArticles: SetSelectedArticles
+   cat: any
 }
 
 const maxArticlesToSelect = 5
 
-const PageHome = ({articles, selectedArticles, setSelectedArticles}: Props) => {
+
+const PageHome = ({articles, selectedArticles, setSelectedArticles, cat}: Props) => {
+
+console.log()
    return (
       <Grid container={true}>
          <Grid.Column width={16} className="--no-padding">
@@ -23,7 +27,7 @@ const PageHome = ({articles, selectedArticles, setSelectedArticles}: Props) => {
                   maxArticlesToSelect={maxArticlesToSelect}
                   selectedArticles={selectedArticles}
                   setSelectedArticles={setSelectedArticles}
-               />
+                  cat={cat}               />
                <HomeSelected
                   selectedArticles={selectedArticles}
                   maxArticlesToSelect={maxArticlesToSelect}

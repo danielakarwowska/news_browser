@@ -1,11 +1,14 @@
-.navbar_container{
+.navbar_container {
+    box-sizing: border-box;
+    border: orange solid 8px;
     margin-bottom: 1rem;
     z-index: 4;
+    background-color: black;
+    color: white;
 }
-.logo{
+
+.logo {
     align-items: center;
-    margin: 4px; padding: 2px;
-}
-.statistic{
-    padding: 40px;
+    padding: 2px;
+    height: 60%;
 }

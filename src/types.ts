@@ -11,6 +11,10 @@ export type Article = {
 }
 export type setArticles = []
 
+export type Category = {
+    key: string; text: string; value: string []
+}
+
 export type SelectedArticle = {
     id: string
     title: string

@@ -9,10 +9,10 @@
 @import '../components/article/article';
 
 @import '../components/article/article_floating.scss';
-// @import '../components/article_select.scss';
+@import '../components/article_select.scss';
 
-// @import '../components/pages/read/articles_full.scss';
-// @import '../components/articles_description.scss';
-// @import '../components/navbar/navbar.scss';
-// @import '../components/navbar/right_nav.scss';
-// @import '../components/animation/bubbles_animation.scss';
+@import '../components/pages/read/articles_full.scss';
+@import '../components/articles_description.scss';
+@import '../components/navbar/navbar.scss';
+@import '../components/navbar/left_nav.scss';
+@import '../components/animation/bubbles_animation.scss';

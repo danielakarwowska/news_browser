@@ -7,7 +7,6 @@ import { Article, Category } from './types'
 import Navbar from './components/navbar/navbar'
 import axios from 'axios'
 import category from './components/data/category'
-import { DropdownItemProps } from 'semantic-ui-react'
 
 const App = () => {
 
@@ -15,7 +14,7 @@ const App = () => {
    const [sum, setTotalSum] = useState<number>(0)
    const [selectedArticles, setSelectedArticles] = useLocalStorage('selectedArticles', [])
    const [cat, setCategory] = useState('general')
-
+console.log(cat)
    useEffect(() => {
       const fetchNews = async () => {
          try {
@@ -28,13 +27,12 @@ const App = () => {
          }
       }
         fetchNews()
-   }, [])
+   }, [cat])
 
    useEffect(() => {
       localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))
    }, [selectedArticles])
    console.log(category)
-   console.log(cat)
    return (
       <BrowserRouter>
          <Navbar 

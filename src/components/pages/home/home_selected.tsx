@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Header, Segment } from 'semantic-ui-react'
+import { Button, Container, Grid, GridColumn, Header, Segment } from 'semantic-ui-react'
 import ArticleFloating from '../../article/article_floating'
 import Bubbles from '../../animation/bubbles'
 import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
@@ -30,7 +30,7 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
          {
             howManyArticles > 0 && (
                <ul className="articles-list__list">
-                  <Segment>
+                  <Container>
                      {
                         selectedArticles.map(selectedArticle => (
                            <li key={`preview_${selectedArticle.id}`}>
@@ -38,12 +38,12 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
                            </li>
                         ))
                      }
-                  </Segment>
+                  </Container>
                </ul>
             )
          }
          <Link to={'PageRead'}>
-            <Button size='large' fluid color='black'
+            <Button className='signUpBtn'
                content="Go to reading"
                disabled={selectedArticles.length === 0}
             />

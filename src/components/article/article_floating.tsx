@@ -33,7 +33,7 @@ const __ArticleFloating = ({ xPos, yPos, article, selectedArticles, maxArticlesT
       style={{ left: xPos, top: yPos }}
       >
          <Button
-            fluid color='orange'
+            fluid 
             className="--button"
             disabled={isDisabled}
             content={title}

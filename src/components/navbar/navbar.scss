@@ -2,9 +2,10 @@
     box-sizing: border-box;
     border: orange solid 8px;
     margin-bottom: 1rem;
-    z-index: 4;
     background-color: black;
+    position: sticky;
     color: white;
+    z-index: 20;
 }
 
 .logo {

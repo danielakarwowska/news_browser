@@ -4,7 +4,6 @@ import HomeArticles from './home_articles'
 import HomeSelected from './home_selected'
 import {Article, SelectedArticle, SetSelectedArticles} from '../../../types'
 
-
 type Props = {
    articles: Article[]
    selectedArticles: SelectedArticle[]
@@ -13,7 +12,6 @@ type Props = {
 }
 
 const maxArticlesToSelect = 5
-
 
 const PageHome = ({articles, selectedArticles, setSelectedArticles, cat}: Props) => {
 
@@ -38,5 +36,4 @@ console.log()
       </Grid>
    )
 }
-
 export default PageHome

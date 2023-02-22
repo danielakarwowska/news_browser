@@ -35,8 +35,8 @@ const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSele
          {myList.map((article, index) =>
             <Articles.Floating
                key={index}
-               xPos={15 * index}
-               yPos={15 * index}
+               xPos={90 * index}
+               yPos={90 * index}
                article={article}
                selectedArticles={selectedArticles}
                maxArticlesToSelect={maxArticlesToSelect}

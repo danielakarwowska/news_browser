@@ -1,12 +1,13 @@
 .article.--floating {
-  width: 250px;
-  position: absolute;
-  margin: 1rem;
+  width: 450px;
+  color: #111111;
+  // position: absolute;
+  margin: 5rem;
   display: flex;
   flex-direction: column;
-  // border: orange solid;
   align-items: center;
   border-radius: 5px;
+  z-index: 5;
 
   .--button {
     @include Font();

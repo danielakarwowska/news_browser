@@ -18,7 +18,7 @@ module.exports = () => {
     )
 
     plugins.push(new Serve({
-        port: 8000,
+        port: 3000,
         static: build,
         publicPath: build,
         waitForBuild: true,

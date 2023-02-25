@@ -27,7 +27,7 @@ const Navbar = ({ articles, totalSum, category, setCategory }: Props) => {
                     category={category} />
                 </Grid.Column>
                 <Grid.Column>
-                    <Image centered bordered className="logo" src="https://cdn.discordapp.com/attachments/915912641548009522/1032732229899649045/News_Website.jpg" />
+                    <Image className="logo" src="https://media.discordapp.net/attachments/915912641548009522/1032732229899649045/News_Website.jpg" alt="" />
                 </Grid.Column>
                 <Grid.Column >
                     <Statistic inverted>

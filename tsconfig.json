@@ -4,7 +4,8 @@
   "include": [
     "src/*",
     "src/components/data",
-    "src/components/__tests__"
+    "src/components/__tests__",
+    "declarations.d.ts"
   ],
   "compilerOptions": {
     "resolveJsonModule": true,
@@ -30,7 +31,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "typeRoots": [
-      "./node_modules/@types"
+      "./node_modules/@types", 
     ],
     "types": [
       "node",

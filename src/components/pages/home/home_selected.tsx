@@ -1,8 +1,6 @@
 import React from 'react'
-import { Button, Container, Grid, GridColumn, Header, Segment } from 'semantic-ui-react'
-import ArticleFloating from '../../article/article_floating'
-import Bubbles from '../../animation/bubbles'
-import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
+import { Button, Container, Segment } from 'semantic-ui-react'
+import { SelectedArticle, SetSelectedArticles } from '../../../types'
 import ArticlePreview from '../../article_preview'
 import { Link } from 'react-router-dom'
 
@@ -20,25 +18,19 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
       return <p></p>
    }
 
-
    return (
       <aside className="page-home__selected">
-         <Header as='h2' icon textAlign='center'>
-            <Header.Content>Selected articles</Header.Content>
-         </Header>
-         <Header as="h4" textAlign='center'>You chose <strong>{howManyArticles}</strong> articles to read. Maxium selection is <strong>{maxArticlesToSelect}</strong></Header>
+      <strong className='selected'>{howManyArticles} articles to read. Maxium selection is {maxArticlesToSelect}</strong>
          {
             howManyArticles > 0 && (
                <ul className="articles-list__list">
-                  <Container>
                      {
                         selectedArticles.map(selectedArticle => (
-                           <li key={`preview_${selectedArticle.id}`}>
+                           <Segment key={`preview_${selectedArticle.id}`}>
                               <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
-                           </li>
+                           </Segment>
                         ))
                      }
-                  </Container>
                </ul>
             )
          }

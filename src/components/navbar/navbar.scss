@@ -1,15 +1,29 @@
 .navbar_container {
     box-sizing: border-box;
-    border: orange solid 8px;
+    border: $main-color solid 8px;
     margin-bottom: 1rem;
-    background-color: black;
+    background-color: $background-color;
     position: sticky;
     color: white;
     z-index: 20;
 }
 
-.logo {
+.hidden_mobile {
     align-items: center;
     padding: 2px;
-    height: 60%;
+}
+
+@media(max-width: 500px) {
+    .navbar_container{
+    width: 100vh;
+    }
+    .hidden_mobile {
+       display: none !important;
+    }
+    .category{
+        display: none;
+    }
+    .statistic{
+        display: none !important;
+    }
 }

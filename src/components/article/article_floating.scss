@@ -24,3 +24,8 @@
     }
   }
 }
+@media(max-width: 500px) {
+  .--button {
+    width: 15vh !important;
+  }
+}

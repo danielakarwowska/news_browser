@@ -23,7 +23,6 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
                )
                : (
                   <Fragment>
-                     <Header textAlign="center" dividing>Select an article to read from the list</Header>
                   </Fragment>
                )
          }

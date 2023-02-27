@@ -22,9 +22,9 @@ const PageRead = ({ articles, selectedArticles }: Props) => {
             </Grid.Column>
             <Grid.Column width={6}>
                <PageSliceArticlesToRead selectedArticle={selectedArticle} selectedArticles={selectedArticles}
-                  setSelectedArticle={setSelectedArticle} />
-               <Link to="/">
-                  <Button size="large" content="Back" fluid color="black"></Button>
+               setSelectedArticle={setSelectedArticle} maxArticlesToSelect={5} />
+               <Link className='back_button' to="/">
+                  <Button>Back</Button>
                </Link>
             </Grid.Column>
          </Grid>

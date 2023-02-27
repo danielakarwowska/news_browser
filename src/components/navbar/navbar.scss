@@ -8,14 +8,22 @@
     z-index: 20;
 }
 
-.logo {
+.hidden_mobile {
     align-items: center;
     padding: 2px;
-    height: 10rem;
 }
 
-@media (min-width: 1080px){
-.logo{
-    
-}
+@media(max-width: 500px) {
+    .navbar_container{
+    width: 100vh;
+    }
+    .hidden_mobile {
+       display: none !important;
+    }
+    .category{
+        display: none;
+    }
+    .statistic{
+        display: none !important;
+    }
 }

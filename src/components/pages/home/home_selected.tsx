@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container } from 'semantic-ui-react'
+import { Button, Container, Segment } from 'semantic-ui-react'
 import { SelectedArticle, SetSelectedArticles } from '../../../types'
 import ArticlePreview from '../../article_preview'
 import { Link } from 'react-router-dom'
@@ -20,15 +20,15 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
 
    return (
       <aside className="page-home__selected">
-         <h3>You chose <strong>{howManyArticles}</strong> articles to read. Maxium selection is <strong>{maxArticlesToSelect}</strong></h3>
+      <strong className='selected'>{howManyArticles} articles to read. Maxium selection is {maxArticlesToSelect}</strong>
          {
             howManyArticles > 0 && (
                <ul className="articles-list__list">
                      {
                         selectedArticles.map(selectedArticle => (
-                           <li key={`preview_${selectedArticle.id}`}>
+                           <Segment key={`preview_${selectedArticle.id}`}>
                               <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
-                           </li>
+                           </Segment>
                         ))
                      }
                </ul>

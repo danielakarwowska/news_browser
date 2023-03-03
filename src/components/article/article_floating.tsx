@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Container, Image } from 'semantic-ui-react'
 import { Article, SelectedArticle, SetSelectedArticles } from '../../types'
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 }
 
 const __ArticleFloating = ({ xPos, yPos, article, selectedArticles, maxArticlesToSelect, setSelectedArticles }: Props) => {
-   
+
    const { title, description, publishedAt, urlToImage, category } = article
    const isDisabled = !!selectedArticles.find(art => art.id === publishedAt || (selectedArticles.length === maxArticlesToSelect))
 
@@ -29,17 +29,16 @@ const __ArticleFloating = ({ xPos, yPos, article, selectedArticles, maxArticlesT
       ])
    }, [setSelectedArticles, publishedAt, title, selectedArticles])
    return (
-      <div className="article --floating" 
-      style={{ left: xPos, top: yPos }}
+      <article className="article --floating"
+         style={{ left: xPos, top: yPos }}
       >
          <Button
-            fluid 
             className="--button"
             disabled={isDisabled}
             content={title}
-            onClick={onClick}
-         />
-      </div>
+            onClick={onClick}>
+         </Button>
+      </article>
    )
 }
 

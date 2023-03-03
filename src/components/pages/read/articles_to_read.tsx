@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ArticleSelect from '../../article_select'
 import { SelectedArticle, SetSelectedArticle } from '../../../types'
-import { Header, Segment, Table } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 type Props = {
     selectedArticles: SelectedArticle[]
@@ -22,13 +22,13 @@ const PageSliceArticlesToRead = ({ setSelectedArticle, selectedArticles, selecte
                     {
                         selectedArticles.map(article =>
                             <li key={article.id}>
-                                <Segment>
+                                <Container>
                                 <ArticleSelect
                                     article={article}
                                     selectedArticle={selectedArticle}
                                     setSelectedArticle={setSelectedArticle}
                                 />
-                                </Segment>
+                                </Container>
                             </li>
                         )
                     }

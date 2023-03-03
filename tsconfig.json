@@ -4,8 +4,7 @@
   "include": [
     "src/*",
     "src/components/data",
-    "src/components/__tests__",
-    "declarations.d.ts"
+    "src/components/__tests__"
   ],
   "compilerOptions": {
     "resolveJsonModule": true,

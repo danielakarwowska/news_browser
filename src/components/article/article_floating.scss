@@ -11,19 +11,26 @@
 
   .--button {
     @include Font();
-    font-size: $font-size;
-    font-weight: 500;
+    width: 60vh;
+    font-size: 15px;
+    line-height: 30.8px;
     background: $main-color;
-    border-radius: 2rem;
-    padding: 1.5rem 2.5rem;
-    box-shadow: 2px 2px #c8c8c8;
+    font-style: normal;
+    gap: 20px;
+    padding: 0;
+    border: 1px orange solid;
     color: $font-color;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: #fff;
     }
   }
 }
+.title{
+  padding: 20px;
+}
+
 @media(max-width: 500px) {
   .--button {
     width: 15vh !important;

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {Grid, Header, Image} from 'semantic-ui-react'
+import {Container, Grid, Header, Image} from 'semantic-ui-react'
 import Description from '../../articles_description'
 import {Article} from '../../../types'
 
@@ -13,12 +13,12 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
          {
             selectedArticle
                ? (
-                  <Grid width="10">
-                     <h2 className="title_description">{selectedArticle.title}</h2>
-                     <Image className="url_to_image" size="huge" centered src={selectedArticle.urlToImage}></Image>
-                     <h3 className="description"><Description/></h3>
+                  <article className='url__image'>
+                     <strong className='article_full_title'>{selectedArticle.title}</strong>
+                     <img className="url_to_image" src={selectedArticle.urlToImage} alt=''></img>
+                     <article className="description"><Description/></article>
                      <h4>{selectedArticle.id}</h4>
-                  </Grid>
+                  </article>
 
                )
                : (

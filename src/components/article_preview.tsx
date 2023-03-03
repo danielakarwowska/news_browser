@@ -26,7 +26,7 @@ const ArticlePreview = ({article, setSelectedArticles}: Props) => {
     return (
         <div className="article --preview">
             <strong>{article.title.substring(0, 70)}</strong>
-            <Button basic color="orange" size='medium' fluid content="Delete" onClick={onDeleteClick}/>
+            <Button className='preview_button' content="Delete" onClick={onDeleteClick}/>
         </div>
     )
 }

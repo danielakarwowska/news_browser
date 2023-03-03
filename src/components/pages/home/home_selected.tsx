@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Segment } from 'semantic-ui-react'
+import { Button, Segment } from 'semantic-ui-react'
 import { SelectedArticle, SetSelectedArticles } from '../../../types'
 import ArticlePreview from '../../article_preview'
 import { Link } from 'react-router-dom'
@@ -26,9 +26,9 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
                <ul className="articles-list__list">
                      {
                         selectedArticles.map(selectedArticle => (
-                           <Segment key={`preview_${selectedArticle.id}`}>
+                           <article className='articles-list' key={`preview_${selectedArticle.id}`}>
                               <ArticlePreview article={selectedArticle} setSelectedArticles={setSelectedArticles} />
-                           </Segment>
+                           </article>
                         ))
                      }
                </ul>

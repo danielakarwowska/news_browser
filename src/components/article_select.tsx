@@ -13,7 +13,7 @@ const ArticleSelect = ({ article, selectedArticle, setSelectedArticle }: Props) 
     return (
         <aside className="page-home__selected">
             <strong >{article.title}</strong>
-            <Button basic color="orange" size='medium' fluid
+            <Button
                 content="Read more"
                 disabled={selectedArticle === article.id}
                 onClick={() => setSelectedArticle(article.id)} />

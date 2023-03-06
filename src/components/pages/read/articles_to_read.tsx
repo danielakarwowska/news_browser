@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ArticleSelect from '../../article_select'
 import { SelectedArticle, SetSelectedArticle } from '../../../types'
-import { Header, Segment, Table } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 type Props = {
     selectedArticles: SelectedArticle[]
@@ -15,21 +15,19 @@ const PageSliceArticlesToRead = ({ setSelectedArticle, selectedArticles, selecte
     const howManyArticles = selectedArticles.length
 
     return (
-        <aside className="page-home__selected">
+        <aside className="article--preview">
       <strong className='selected'>{howManyArticles} articles to read. Maxium selection is {maxArticlesToSelect}</strong>
             {selectedArticles.length > 0 && (
                 <ul className="articles-list__list">
                     {
                         selectedArticles.map(article =>
-                            <li key={article.id}>
-                                <Segment>
+                            <article className='articles-list' key={article.id}>
                                 <ArticleSelect
                                     article={article}
                                     selectedArticle={selectedArticle}
                                     setSelectedArticle={setSelectedArticle}
                                 />
-                                </Segment>
-                            </li>
+                            </article>
                         )
                     }
                 </ul>

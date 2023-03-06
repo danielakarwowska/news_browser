@@ -1,0 +1,13 @@
+.article--preview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    // width: 70%;
+}
+.preview-title{
+    display: flex;
+    width: 80%;
+    font-size: inherit;
+    color: white;
+}

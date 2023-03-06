@@ -1,9 +1,11 @@
+html{
+  background-color: #2B2B2B ;
+}
 $navbarHeight: 250px;
-$main-color: orange ;
-$background-color: black;
-$font-color:#292929;
-$font-family: 'Open Sans', sans-serif;
-$font-size: font-size 1.2em;
+$main-color: #3B3B3B ;
+$background-color: #2B2B2B;
+$font-color:#FFFFFF;
+$font-family: 'Work Sans', sans-serif;
 
 @mixin Font() {
   font-family: $font-family;

@@ -1,8 +1,10 @@
 .description {
-    margin: 20px; 
-    font-size: 20px;
-    margin: 30px;
-    
+    color: white;
+    padding: 50px;
+    font: Work Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
 
     ::first-line{
         font-weight: bold;
@@ -10,7 +12,20 @@
         line-height: 3rem;
     }
 }
-.title_description{
-    text-align: center;
-    padding: 20px;
+.url__image{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.url_to_image{
+    width: 60vh;
+    height: 35vh;
+    margin-top: 40px;
+}
+.article_full_title{
+    font-size: 20px;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }

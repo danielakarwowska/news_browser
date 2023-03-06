@@ -15,20 +15,31 @@ const categories = allCategory
 const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSelectedArticles, cat }: Props) => {
 
 
+   // const [myList, setList] = useState<Article[]>([])
+   // let i = 0
+
+   //    useEffect(() => {
+   //       const art = myList.filter((item) => item.category === cat)
+   //       setList(art)
+   //       if (!articles.length ) return
+   //       const timer = setInterval(() => {
+   //          setList((prevMyList) => [...prevMyList, articles[i]])
+   //          i++
+   //          if (i === articles.length - 1) clearInterval(timer)
+   //       }, 1000)
+   //       return () => clearInterval(timer)
+   //    }, [articles, cat])
    const [myList, setList] = useState<Article[]>([])
    let i = 0
-
-      useEffect(() => {
-         const art = myList.filter((item) => item.category === cat)
-         setList(art)
-         if (!articles.length ) return
-         const timer = setInterval(() => {
-            setList((prevMyList) => [...prevMyList, articles[i]])
-            i++
-            if (i === articles.length - 1) clearInterval(timer)
-         }, 1000)
-         return () => clearInterval(timer)
-      }, [articles, cat])
+   useEffect(() => {
+      if (!articles.length) return
+      const timer = setInterval(() => {
+         setList((prevMyList) => [...prevMyList, articles[i]])
+         i++
+         if (i === articles.length - 1) clearInterval(timer)
+      }, 1000)
+      return () => clearInterval(timer)
+   }, [articles])
 
    return (
       <main className="page-home__articles">

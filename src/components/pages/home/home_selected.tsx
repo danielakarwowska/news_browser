@@ -19,8 +19,8 @@ const HomeSelected = ({ selectedArticles, maxArticlesToSelect, setSelectedArticl
    }
 
    return (
-      <aside className="page-home__selected">
-      <strong className='selected'>{howManyArticles} articles to read. Maxium selection is {maxArticlesToSelect}</strong>
+      <aside className="article--preview">
+      <strong className='selected'>{howManyArticles} articles to read. Maximum selection is {maxArticlesToSelect}</strong>
          {
             howManyArticles > 0 && (
                <ul className="articles-list__list">

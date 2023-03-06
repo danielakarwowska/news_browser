@@ -15,21 +15,19 @@ const PageSliceArticlesToRead = ({ setSelectedArticle, selectedArticles, selecte
     const howManyArticles = selectedArticles.length
 
     return (
-        <aside className="page-home__selected">
+        <aside className="article--preview">
       <strong className='selected'>{howManyArticles} articles to read. Maxium selection is {maxArticlesToSelect}</strong>
             {selectedArticles.length > 0 && (
                 <ul className="articles-list__list">
                     {
                         selectedArticles.map(article =>
-                            <li key={article.id}>
-                                <Container>
+                            <article className='articles-list' key={article.id}>
                                 <ArticleSelect
                                     article={article}
                                     selectedArticle={selectedArticle}
                                     setSelectedArticle={setSelectedArticle}
                                 />
-                                </Container>
-                            </li>
+                            </article>
                         )
                     }
                 </ul>

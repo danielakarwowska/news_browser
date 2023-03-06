@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import { SelectedArticle, SetSelectedArticle } from '../types'
 
 type Props = {
@@ -11,12 +11,11 @@ type Props = {
 const ArticleSelect = ({ article, selectedArticle, setSelectedArticle }: Props) => {
 
     return (
-        <aside className="page-home__selected">
-            <strong >{article.title}</strong>
-            <Button
-                content="Read more"
+        <aside className="article--preview">
+            <strong className='preview-title'>{article.title}</strong>
+            <Button icon className='preview_button'
                 disabled={selectedArticle === article.id}
-                onClick={() => setSelectedArticle(article.id)} />
+                onClick={() => setSelectedArticle(article.id)}><Icon name='arrow circle left'/></Button>
         </aside>
     )
 

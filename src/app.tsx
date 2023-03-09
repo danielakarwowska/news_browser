@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import PageHome from './components/pages/home/home'
 import PageRead from './components/pages/read'
 import useLocalStorage from './hooks/use_local_storage'
-import { Article, Category } from './types'
+import { Article } from './types'
 import Navbar from './components/navbar/navbar'
 import axios from 'axios'
 import category from './components/data/category'
@@ -14,7 +14,7 @@ const App = () => {
    const [sum, setTotalSum] = useState<number>(0)
    const [selectedArticles, setSelectedArticles] = useLocalStorage('selectedArticles', [])
    const [cat, setCategory] = useState('general')
-console.log(cat)
+
    useEffect(() => {
       const fetchNews = async () => {
          try {

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Articles from '../../../components/article/article'
 import { Article, SelectedArticle, SetSelectedArticles } from '../../../types'
 import allCategory from '../../data/category'

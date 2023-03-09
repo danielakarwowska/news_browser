@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Segment } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import { SelectedArticle, SetSelectedArticles } from '../../../types'
 import ArticlePreview from '../../article_preview'
 import { Link } from 'react-router-dom'

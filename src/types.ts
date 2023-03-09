@@ -1,6 +1,5 @@
 import React, {Dispatch} from "react";
 export type Article = {
-    filter(arg0: (ari: string) => any): unknown;
     id: string
     title: string
     description : string
@@ -9,7 +8,6 @@ export type Article = {
     category: string
     cat: []
 }
-export type setArticles = []
 
 export type Category = {
     key: string; text: string; value: string []

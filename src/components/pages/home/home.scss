@@ -16,10 +16,9 @@
         background-color: #3B3B3B;
         color: #FFFF;
         padding: 5px;
-        border-bottom: 1px solid orange;
         border-top: 1px solid orange;
         // width: 30%;
-         display: flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -30,6 +29,8 @@
     justify-content: center;
     padding: 5vh;
     font-size: large;
+    border-bottom: 1px solid orange;
+
 }
 
 .button {
@@ -38,23 +39,9 @@
 
 .articles-list {
     height: 10vh;
-    // width: 60vh;
     padding: 5px;
-    // border-bottom: 1px solid orange;
-    // border-top: 1px solid orange;
-
 
 }
-// .preview_button{
-//     display: flex;
-// }
-// .page-home__articles {
-//     padding: 1rem;
-//     position: relative;
-//     align-items: center;
-//     justify-content: center;
-//     z-index: 5;
-// }
 
 .page-home__articles {
     -webkit-animation-name: scrool;

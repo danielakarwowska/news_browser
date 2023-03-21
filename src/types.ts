@@ -6,7 +6,6 @@ export type Article = {
     urlToImage: any
     publishedAt: string
     category: string
-    cat: []
 }
 
 export type Category = {

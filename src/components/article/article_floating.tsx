@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { Button, Container, Image } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import { Article, SelectedArticle, SetSelectedArticles } from '../../types'
 
 type Props = {

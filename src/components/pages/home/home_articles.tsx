@@ -10,7 +10,6 @@ type Props = {
    setSelectedArticles: SetSelectedArticles
    cat: any
 }
-const categories = allCategory
 
 const HomeArticles = ({ articles, maxArticlesToSelect, selectedArticles, setSelectedArticles, cat }: Props) => {
 

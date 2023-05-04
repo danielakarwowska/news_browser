@@ -1,4 +1,5 @@
-import React, {Dispatch} from "react";
+import React, {Dispatch} from "react"
+
 export type Article = {
     id: string
     title: string
@@ -6,11 +7,6 @@ export type Article = {
     urlToImage: any
     publishedAt: string
     category: string
-    cat: []
-}
-
-export type Category = {
-    key: string; text: string; value: string []
 }
 
 export type SelectedArticle = {
@@ -25,5 +21,3 @@ export type SetSelectedArticles = Dispatch<React.SetStateAction<SelectedArticle[
 export type SetSelectedArticle = Dispatch<React.SetStateAction<string>>
 
 export type SetCategory = Dispatch<React.SetStateAction<string>>
-
-

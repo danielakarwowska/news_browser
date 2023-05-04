@@ -14,7 +14,6 @@ const PageSliceArticleFull = ({selectedArticle}: Props) => {
             selectedArticle
                ? (
                   <article className='url__image'>
-                     {/* <strong className='article_full_title'>{selectedArticle.title}</strong> */}
                      <img className="url_to_image" src={selectedArticle.urlToImage} alt=''></img>
                      <article className="description"><Description/></article>
                      <h4>{selectedArticle.id}</h4>

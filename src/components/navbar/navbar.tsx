@@ -1,6 +1,5 @@
 import React from "react"
 import { Grid, Statistic, DropdownItemProps, Container } from "semantic-ui-react"
-import ResponsiveImage from '../navbar/responsive_image'
 import LeftNav from './left_nav'
 import { Article } from '../../types'
 
@@ -13,19 +12,15 @@ type Props = {
 
 const Navbar = ({ totalSum, category, setCategory }: Props) => {
 
-
     const onFilterSelected = (selectOption: string) => {
         setCategory(selectOption)
-        console.log(selectOption)
     }
     return (
         <Grid className="navbar_container" textAlign='center' verticalAlign="middle">
             <Grid.Row columns={3} className='three_column_row'>
                 <Grid.Column >
                     <h2 className="category">Choose your category</h2>
-                    <LeftNav
-                        onFilterSelected={onFilterSelected}
-                        category={category} />
+                    <LeftNav onFilterSelected={onFilterSelected} category={category} />
                 </Grid.Column>
                 <Grid.Column className="hidden_mobile">
                 <img className="img" src="https://media.discordapp.net/attachments/915912641548009522/1032732229899649045/News_Website.jpg"/>                

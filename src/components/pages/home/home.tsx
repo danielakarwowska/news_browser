@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {Grid} from 'semantic-ui-react'
 import HomeArticles from './home_articles'
 import HomeSelected from './home_selected'
@@ -8,14 +8,14 @@ type Props = {
    articles: Article[]
    selectedArticles: SelectedArticle[]
    setSelectedArticles: SetSelectedArticles
-   cat: any
+   category: string
+   setCategory: any
 }
 
 const maxArticlesToSelect = 5
 
-const PageHome = ({articles, selectedArticles, setSelectedArticles, cat}: Props) => {
+const PageHome = ({articles, selectedArticles, setSelectedArticles, category, setCategory}: Props) => {
 
-console.log()
    return (
       <Grid container={true}>
          <Grid.Column width={16} className="--no-padding">
@@ -25,7 +25,8 @@ console.log()
                   maxArticlesToSelect={maxArticlesToSelect}
                   selectedArticles={selectedArticles}
                   setSelectedArticles={setSelectedArticles}
-                  cat={cat}               />
+                  category={category} 
+                  setCategory={setCategory}/>
                <HomeSelected
                   selectedArticles={selectedArticles}
                   maxArticlesToSelect={maxArticlesToSelect}

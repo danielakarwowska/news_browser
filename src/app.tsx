@@ -6,7 +6,6 @@ import useLocalStorage from './hooks/use_local_storage'
 import { Article } from './types'
 import Navbar from './components/navbar/navbar'
 import axios from 'axios'
-import category from './components/data/category'
 
 const App = () => {
 
@@ -18,7 +17,8 @@ const App = () => {
    useEffect(() => {
       const fetchNews = async () => {
          try {
-            const response = await axios.get(`https://lfc3csdffb.execute-api.eu-west-1.amazonaws.com/newLIve/articles`)
+            const response = await axios.get(`https://lfc3csdffb.execute-api.eu-west-1.amazonaws.com/newLIve/articles?category=${cat}`)
+            console.log(cat)
             setArticles(response.data.body)
             console.log(response.data.body)
             setTotalSum(response.data.body.length)
@@ -26,27 +26,29 @@ const App = () => {
             console.log('error')
          }
       }
-        fetchNews()
+      fetchNews()
    }, [cat])
+
 
    useEffect(() => {
       localStorage.setItem('selectedArticles', JSON.stringify(selectedArticles))
    }, [selectedArticles])
-   console.log(category)
+
    return (
       <BrowserRouter>
-         <Navbar 
-         totalSum={sum} 
-         articles={articles}
-         category={category}
-         setCategory={setCategory} />
+         <Navbar
+            totalSum={sum}
+            articles={articles}
+            category={cat}
+            setCategory={setCategory} />
          <Routes>
             <Route path="/" element={(
                <PageHome
                   articles={articles}
                   selectedArticles={selectedArticles}
                   setSelectedArticles={setSelectedArticles}
-                  cat={cat}/>
+                  category={cat}
+                  setCategory={setCategory} />
             )} />
             <Route path="PageRead" element={<PageRead
                articles={articles}

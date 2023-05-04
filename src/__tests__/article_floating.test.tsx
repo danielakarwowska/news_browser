@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import ArticleFloating from '../components/article/article_floating';
-import { SelectedArticle } from '../types';
 
 describe('__ArticleFloating', () => {
   test('renders a button on the page', () => {
